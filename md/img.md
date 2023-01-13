@@ -1,14 +1,13 @@
 ## 按钮配置文件
 按钮配置文件路径
 ```path
-./plugins/PPOUI/OPTools/Config.json
+./plugins/PPOUI/OPTools/ButtonData.json
 ```
 
 ### 配置文件详解
 > [!attention]
 > json文件不允许添加注释，请勿直接复制  
 
-> 关于自定义请看文末[点我跳转](#自定义插件)
 
 ```json
 {
@@ -156,23 +155,6 @@
     ]
 }
 ```
-### 自定义插件
-> [!note]
-> "type"有两个可用的类，“inside”和“command”  
-> “inside”为插件内部函数，自定义时请勿使用此类  
-> “command”为执行命令，用于从主页跳转到其他插件页面，与菜单插件同理  
-> 例如把"插件设置"添加进菜单主页
-> ```json
-> {
->   "name": "插件设置",
->   "images": "",
->   "type": "command",
->   "open": "/tools set"    
-> }
-> ```
-> TIPS:   
-> 1.“images”为图标可自行添加  
-> 2.你可以自由对主页按钮顺序进行更改  
 
 > [!tip]
 > 更改配置文件后控制台输入“tools reload”即可重新加载配置文件  
