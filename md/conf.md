@@ -1,7 +1,7 @@
 ## 插件配置文件
 配置文件路径
 ```path
-./plugins/OP Tools/Config.json
+./plugins/PPOUI/OPTools/Config.json
 ```
 ### 配置文件详解
 > [!attention]
@@ -9,9 +9,12 @@
 
 ```json
 {
-    "Version": "1.2", 
-    "Language": "zh_CN.json",      //语言
-    "Clear_Item": "kill @e[type=item]"    //清理掉落物执行的命令（默认无需更改）
+    "version": "2.0.0", //配置文件版本
+    "language": "zh_CN.json", //语言文件
+    "Kick_Txt": "你已被管理员踢出服务器", //踢出时默认显示内容
+    "Broad_head": "§e[§d广播§r§e] §r", //广播消息头
+    "Cleaner_API": 0,  //启用Cleaner_API
+    "Clear_Cmd": "kill @e[type=item]"  //清理掉落物命令
 }
 ```
 

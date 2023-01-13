@@ -1,7 +1,7 @@
 ## 按钮配置文件
 按钮配置文件路径
 ```path
-./plugins/OP Tools/Button.json
+./plugins/PPOUI/OPTools/Config.json
 ```
 
 ### 配置文件详解
@@ -12,208 +12,145 @@
 
 ```json
 {
-    "Main": [   //主页面
+    "Rule": [//游戏规则
         {
-            "name":"踢出玩家",  //按钮显示的名称
-            "images": "textures/ui/permissions_visitor_hand",   //按钮图标
-            "type": "inside",   //类 “inside”为本插件内部调用  “command”为执行命令
-            "open": "kick_player"   //执行的命令
+            "name": "随机刻", //名称
+            "image": "", //图片
+            "txt": "描述: 每游戏刻每区段中随机的方块刻发生的频率",//描述
+            "type": "randomTickSpeed" //规则ID
         },
         {
-            "name":"杀死玩家",
-            "images": "textures/ui/icon_recipe_equipment",
-            "type": "inside",
-            "open": "kill_player"
-        },
-        {
-            "name":"更改天气",
-            "images": "textures/ui/icon_fall",
-            "type": "inside",
-            "open": "weather_ui"
-        },
-        {
-            "name":"更改时间",
-            "images": "textures/items/clock_item",
-            "type": "inside",
-            "open": "time_ui"
-        },
-        {
-            "name":"广播消息",
-            "images": "textures/ui/sound_glyph_color_2x",
-            "type": "inside",
-            "open": "guangbo_ui"
-        },
-        {
-            "name":"设置MOTD",
-            "images": "textures/ui/settings_glyph_color_2x",
-            "type": "inside",
-            "open": "motd_ui"
-        },
-        {
-            "name":"设置人数",
-            "images": "textures/ui/settings_glyph_color_2x",
-            "type": "inside",
-            "open": "player_ui"
-        },
-        {
-            "name":"玩家传送",
-            "images": "textures/ui/dressing_room_skins.png",
-            "type": "inside",
-            "open": "tp_here_ui"
-        },
-        {
-            "name":"清理掉落物",
-            "images": "textures/ui/icon_trash",
-            "type": "inside",
-            "open": "killitem_ui"
-        },
-        {
-            "name":"更改游戏模式",
-            "images": "textures/ui/icon_setting",
-            "type": "inside",
-            "open": "setgm_ui"
-        },
-        {
-            "name":"更改游戏规则",
-            "images": "textures/ui/icon_bookshelf",
-            "type": "inside",
-            "open": "gamerule_ui"
-        },
-        {
-            "name":"获取隐藏方块",
-            "images": "textures/ui/icon_blackfriday",
-            "type": "inside",
-            "open": "blocks_ui"
-        },
-        {
-            "name":"崩溃玩家客户端",
-            "images": "textures/ui/cancel",
-            "type": "inside",
-            "open": "cash_ui"
-        },
-        {
-            "name":"以某个玩家身份说话",
-            "images": "textures/ui/sound_glyph_color_2x",
-            "type": "inside",
-            "open": "player_talk_ui"
-        }
-    ],
-    "gamerule": [   //更改游戏规则
-        {
-            "name": "误伤/PVP", //按钮名称
-            "images": "",   //按钮图标
-            "type": "pvp"   //规则id
+            "name": "误伤/PVP",
+            "image": "",
+            "txt": "描述: 玩家之间能否造成伤害",
+            "type": "pvp"
         },
         {
             "name": "显示坐标",
-            "images": "",
+            "image": "",
+            "txt": "描述: 是否在聊天框区域持续实时显示玩家坐标",
             "type": "showcoordinates"
         },
         {
             "name": "火焰蔓延",
-            "images": "",
+            "image": "",
+            "txt": "描述: 火是否蔓延及自然熄灭",
             "type": "dofiretick"
         },
         {
             "name": "TNT爆炸",
-            "images": "",
+            "image": "",
+            "txt": "描述: TNT是否会爆炸",
             "type": "tntexplodes"
         },
         {
             "name": "生物掉落",
-            "images": "",
+            "image": "",
+            "txt": "描述: 生物在死亡时是否掉落物品",
             "type": "domobloot"
         },
         {
             "name": "方块掉落",
-            "images": "",
+            "image": "",
+            "txt": "描述: 方块被破坏时是否掉落物品",
             "type": "dotiledrops"
         },
         {
             "name": "立即重生",
-            "images": "",
+            "image": "",
+            "txt": "描述: 玩家死亡时是否不显示死亡界面直接重生",
             "type": "doimmediaterespawn"
         },
         {
             "name": "重生半径",
-            "images": "",
+            "image": "",
+            "txt": "描述: 首次进入服务器的玩家和没有重生点的死亡玩家在重生时与世界重生点坐标的距离",
             "type": "spawnradius"
         },
         {
             "name": "昼夜更替",
-            "images": "",
+            "image": "",
+            "txt": "描述: 是否进行昼夜更替和月相变化",
             "type": "dodaylightcycle"
         },
         {
             "name": "天气更替",
-            "images": "",
+            "image": "",
+            "txt": "描述: 天气是否变化",
             "type": "doweathercycle"
         },
         {
             "name": "生物生成",
-            "images": "",
+            "image": "",
+            "txt": "描述: 生物是否自然生成",
             "type": "domobspawning"
         },
         {
             "name": "生物破坏",
-            "images": "",
+            "image": "",
+            "txt": "描述: 生物是否能够进行破坏",
             "type": "mobgriefing"
         },
         {
             "name": "实体掉落",
-            "images": "",
+            "image": "",
+            "txt": "描述: 非生物实体是否掉落物品",
             "type": "doentitydrops"
         },
         {
             "name": "幻翼生成",
-            "images": "",
+            "image": "",
+            "txt": "描述: 幻翼是否在夜晚生成",
             "type": "doinsomnia"
         },
         {
             "name": "死亡不掉落",
-            "images": "",
+            "image": "",
+            "txt": "描述: 玩家死亡后是否保留物品栏物品、经验",
             "type": "keepinventory"
         },
         {
             "name": "命令方块开关",
-            "images": "",
+            "image": "",
+            "txt": "描述: 命令方块在游戏中是否被启用",
             "type": "commandblocksenabled"
         },
         {
             "name": "命令方块输出",
-            "images": "",
+            "image": "",
+            "txt": "描述: 命令方块执行命令时是否在聊天框中向管理员显示",
             "type": "commandblockoutput"
         }
     ],
-    "block": [  //获取隐藏方块
+    "Block": [//获取方块
         {
-            "name": "§l命令方块",   //按钮名称
-            "images": "textures/ui/creator_glyph_color",    //按钮图标
-            "type": "command_block"     //方块id
+            "name": "§l命令方块", //名称
+            "image": "textures/ui/creator_glyph_color", //图片
+            "type": "command_block" //方块ID
         },
         {
             "name": "§l屏障方块",
-            "images": "textures/blocks/barrier",
+            "image": "textures/blocks/barrier",
             "type": "barrier"
         },
         {
             "name": "§l边界方块",
-            "images": "textures/blocks/border",
+            "image": "textures/blocks/border",
             "type": "border_block"
         },
         {
             "name": "§l结构方块",
-            "images": "textures/blocks/structure_block",
+            "image": "textures/blocks/structure_block",
             "type": "structure_block"
         },
         {
             "name": "§l结构空位",
-            "images": "textures/blocks/structure_void",
+            "image": "textures/blocks/structure_void",
             "type": "structure_void"
         },
         {
             "name": "§l光源方块",
-            "images": "textures/items/light_block_15.png",
+            "image": "textures/items/light_block_15.png",
             "type": "light_block"
         }
     ]
