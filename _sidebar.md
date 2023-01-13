@@ -7,6 +7,7 @@
     * [GUI设置](./md/set_ui.md)
 * 配置文件
     * [配置文件](./md/conf.md)
+    * [主页文件](./md/main.md)
     * [按钮文件](./md/img.md)
     * [用户文件](./md/user.md)
     * [语言文件](./md/lang.md)
