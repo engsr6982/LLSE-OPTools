@@ -1,0 +1,8 @@
+.nav_button {
+    background: transparent;
+    border: none;
+    text-align: center;
+    cursor: pointer;
+    text-decoration: none;
+    text-transform: uppercase;
+}
