@@ -1,8 +1,8 @@
 ![IMG_0758](./img/Logo_Background.png)
 
 ## 前言
-请仔细阅读文档  
-请勿在Minebbs评论区反馈问题，请到讨论区反馈问题
+遇到问题请仔细阅读文档  
+请勿在Minebbs评论区反馈问题！
 > [!NOTE]
 > [点我前往OP Tools论坛页](https://www.minebbs.com/resources/op-tools-op-gui.4836/)
 
