@@ -12,5 +12,5 @@
     * [用户文件](./md/user.md)
     * [语言文件](./md/lang.md)
 * [常见问题](./md/QA.md)
-* [更新日志](./md/log.md)
+* [更新日志](./md/Update.md)
 * [MCID_API](./md/api.md)
