@@ -1,4 +1,4 @@
-## 插件配置文件
+## 主页配置文件
 配置文件路径
 ```path
 ./plugins/PPOUI/OPTools/MainGUI.json
