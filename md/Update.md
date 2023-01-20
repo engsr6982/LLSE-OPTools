@@ -8,7 +8,7 @@
 
   1. 多语言使用i18n接口   
   2. 新增“文件/版本 检查”   
-  3. 新增插件“网络更新检查” 
+  3. 新增“网络更新检查” 
 
     > [!tip]
     > 可在配置文件开启
@@ -22,9 +22,9 @@
   9. 配置文件新增自定义Ban命令  
 
   > [!note]
-  > Player  玩家名
-  > time    时间
-  > Reason  原因
+  > Player  玩家名  
+  > time    时间  
+  > Reason  原因  
   > ```json
   > {
   >    "Ban_Cmd": "ban '${Player}' ${time} ${Reason}",
