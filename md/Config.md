@@ -14,7 +14,10 @@
     "Kick_Txt": "你已被管理员踢出服务器", //踢出时默认显示内容
     "Broad_head": "§e[§d广播§r§e] §r", //广播消息头
     "Cleaner_API": 0,  //启用Cleaner_API
-    "Clear_Cmd": "kill @e[type=item]"  //清理掉落物命令
+    "Clear_Cmd": "kill @e[type=item]",  //清理掉落物命令
+    "Network": true, //网络版本检查
+    "Ban_Cmd": "ban '${Player}' ${time} ${Reason}",// 封禁命令
+    "UnBan_Cmd": "unban '${Player}'"//解封命令 具体看更新日志2.1.0
 }
 ```
 
