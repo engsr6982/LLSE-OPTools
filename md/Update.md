@@ -6,7 +6,7 @@
     > [!note]
   > Player  玩家名  
   > time    时间  
-  > Reason  原因 
+  > Reason  原因    
   > #&#     为引号"  用于防止带空格的玩家封禁失败   
   > ```json
   > {
