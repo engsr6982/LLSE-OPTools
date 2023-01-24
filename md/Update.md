@@ -1,10 +1,10 @@
 ## 插件更新日志
 
-### 2023/1/
+### 2023/1/24
 - 2.1.0   
 > [!tip]
 > 2023/1/20
-> 此版本已完成开发，待发布
+> 此版本已完成开发
 
   1. 多语言使用i18n接口   
   2. 新增“文件/版本 检查”   
@@ -12,7 +12,8 @@
 
     > [!tip]
     > 可在配置文件开启
-    > Network : true
+    > Network : false
+    > 调用地址: [https://update.25565.top/api?type=OPTools](https://update.25565.top/api?type=OPTools)
 
   4. 优化翻译数据 
   5. 优化插件 
