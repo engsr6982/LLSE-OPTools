@@ -9,16 +9,16 @@
 
 ```json
 {
-    "version": "2.0.0", //配置文件版本
+    "version": "2.0.2", //配置文件版本
     "language": "zh_CN.json", //语言文件
     "Kick_Txt": "你已被管理员踢出服务器", //踢出时默认显示内容
     "Broad_head": "§e[§d广播§r§e] §r", //广播消息头
     "Cleaner_API": 0,  //启用Cleaner_API
     "Clear_Cmd": "kill @e[type=item]",  //清理掉落物命令
     "Network": true, //网络版本检查
-    "Ban_Cmd": {//具体看更新日志2.1.0～2.1.1
-        "Ban": "ban '${Player}' ${time} ${Reason}",
-        "UnBan": "unban '${Player}'"
+    "Ban_Cmd": {//具体看更新日志2.1.2
+        "Ban": "ban #&#${Player}#&# ${time} ${Reason}",
+        "UnBan": "unban #&#${Player}#&#"
     }
 }
 ```

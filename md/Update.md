@@ -7,6 +7,26 @@
     > [!note]
   > Player  玩家名  
   > time    时间  
+  > Reason  原因 
+  > #&#     为引号"  用于防止带空格的玩家封禁失败   
+  > ```json
+  > {
+  >    "Ban_Cmd": {
+  >         "Ban": "ban #&#${Player}#&# ${time} ${Reason}",
+  >         "UnBan": "unban #&#${Player}#&#"
+  >    }
+  > }
+  > ```
+
+***
+
+### 2023/1/24
+- 2.1.1   
+  1. 修复自定义Ban命令无效问题    
+  2. 更改Ban命令结构    
+    > [!note]
+  > Player  玩家名  
+  > time    时间  
   > Reason  原因  
   > ```json
   > {
@@ -16,7 +36,6 @@
   >    }
   > }
   > ```
-
 
 
 ***
