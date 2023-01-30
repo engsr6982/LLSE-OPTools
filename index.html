@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="zh_CN">
+
 <head>
   <meta charset="UTF-8">
   <title>OP Tools Docs</title>
@@ -16,6 +17,7 @@
   <!--无边框按钮CSS-->
   <link rel="stylesheet" href="assets/css/button.css" />
 </head>
+
 <body>
   <div id="app">Loading...</div>
   <script>
@@ -45,9 +47,9 @@
         crossChapterText: true,
       },
       copyCode: {
-      buttonText : '复制',
-      errorText  : '错误',
-      successText: '复制成功'
+        buttonText: '复制',
+        errorText: '错误',
+        successText: '复制成功'
       },
       //进度条
       progress: {
@@ -73,8 +75,14 @@
           codeTextColor: '#b4b4b4',
         },
         light: {
-                highlightColor: '#e96900',
+          highlightColor: '#e96900',
         }
+      },
+      //最好更新时间
+      timeUpdater: {
+        text: ">最后更新时间: {docsify-updated}",
+        formatUpdated: "{YYYY}-{MM}-{DD} {HH}:{mm}",
+        whereToPlace: "top",  // "top" or "bottom", default to "bottom"
       }
     }
   </script>
@@ -106,5 +114,9 @@
   <!--上下章节-->
   <script src="//unpkg.com/docsify-pagination/dist/docsify-pagination.min.js"></script>
   <!--<script src="./assets/js/docsify-pagination.min.js"></script>-->
+  <!--最后更新时间-->
+  <script src="https://cdn.jsdelivr.net/npm/docsify-updated/src/time-updater.js"></script>
+  <!--<script src="./assets/js/time-updater.js"></script>-->
 </body>
+
 </html>
