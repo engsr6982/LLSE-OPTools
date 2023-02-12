@@ -11,6 +11,7 @@
     * [按钮文件](./md/Button.md)
     * [用户文件](./md/User.md)
     * [语言文件](./md/Language.md)
+* [开发者接口](./md/Plugin_API.md)
 * [常见问题](./md/QA.md)
 * [更新日志](./md/Update.md)
 * [MCID_API](./md/API.md)
