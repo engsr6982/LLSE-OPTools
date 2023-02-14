@@ -1,11 +1,10 @@
 ## 插件配置文件
-配置文件路径
-```path
-./plugins/PPOUI/OPTools/Config.json
-```
+
+- 路径`./plugins/PPOUI/OPTools/config/Config.json`
+
 ### 配置文件详解
-> [!attention]
-> json文件不允许添加注释，请勿直接复制  
+
+- `json文件不允许添加注释，请勿直接复制`  
 
 ```json
 {
@@ -23,5 +22,4 @@
 }
 ```
 
-> [!tip]
-> 更改配置文件后控制台输入“tools reload”即可重新加载配置文件  
+> 更改配置文件后**控制台**输入`tools reload`即可重新加载配置文件  

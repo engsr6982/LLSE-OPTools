@@ -1,14 +1,10 @@
-语言包文件路径
-```path
-./plugins/PPOUI/OPTools/Config.json
-```
+### 语言文件
+
+- 路径`./plugins/PPOUI/OPTools/Lang/Language.json`
 
 ### 语言文件详解
-> [!attention]
-> json文件不允许添加注释，请勿直接复制
 
-> [!tip]
-> 欢迎自行翻译制作其他语言包并发布到Minebbs
+- `json文件不允许添加注释，请勿直接复制`  
 
 ```json
 {
