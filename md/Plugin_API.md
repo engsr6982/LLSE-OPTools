@@ -1,5 +1,10 @@
 > [!tip]
-> 以下所有接口调用均为 `ll.import(命名空间)` 详见[Liteloader BDS文档](https://docs.litebds.com/zh-Hans/#/LLSEPluginDevelopment/ScriptAPI/Ll?id=%e5%af%bc%e5%85%a5%e5%87%bd%e6%95%b0)
+> 以下所有接口调用均为 `ll.import(命名空间)` 详见[Liteloader BDS文档](https://docs.litebds.com/zh-Hans/#/LLSEPluginDevelopment/ScriptAPI/Ll?id=%e5%af%bc%e5%85%a5%e5%87%bd%e6%95%b0)     
+> **添加权限组**调用举例: 
+> ```javascript
+> const Permission_Group_add = ll.import(Permission_Group_add);
+> Permission_Group_add('114514');
+> ```
 
 ## 权限组接口
 
