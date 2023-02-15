@@ -1,24 +1,37 @@
 ## 主页配置文件
 
-- 路径`./plugins/PPOUI/OPTools/Data/MainGUI.json`
+- 路径
+    - `./plugins/PPOUI/OPTools/Data/MainGUI.json`
 
-### 自定义插件
-> [!note]
-> "type"有两个可用的类，“inside”和“command”  
-> “inside”为插件内部函数，自定义时请勿使用此类  
-> “command”为执行命令，用于从主页跳转到其他插件页面，与菜单插件同理  
-> 例如把"插件设置"添加进菜单主页
-> ```json
-> {
->   "name": "插件设置",
->   "images": "",
->   "type": "command",
->   "open": "/tools set"    
-> }
-> ```
-> TIPS:   
-> 1.“images”为图标可自行添加  
-> 2.你可以自由对主页按钮顺序进行更改  
+### 关于自定义
+
+**这是一个钮所需要的参数**   
+- `name`**名称**
+- `image`**图片**
+    - 支持`路径/URL`
+- `type`**类**
+    - `type`目前有三个可用的类
+        - `inside`
+            插件内部函数
+        - `command`
+            执行命令
+        - `form`
+            打开子表单
+- `open`**开**    
+    用于告诉插件该打开那个功能
+
+例如：
+```json
+{
+    "name": "杀死玩家",
+    "image": "textures/ui/icon_recipe_equipment",
+    "type": "inside",
+    "open": "Kill_Ui"
+}
+```
+- `type`为`inside`
+- `open`为`Kill_Ui`
+    - 表示**调用插件内部函数，并打开Kill_Ui**
 
 > 更改配置文件后**控制台**输入`tools reload`即可重新加载配置文件  
 

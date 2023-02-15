@@ -1,6 +1,7 @@
 ## 按钮配置文件
 
-- 路径`./plugins/PPOUI/OPTools/Data/ButtonData.json`
+- 路径
+    - `./plugins/PPOUI/OPTools/Data/ButtonData.json`
 
 ### 关于自定义  
 - 自定义**游戏规则**  

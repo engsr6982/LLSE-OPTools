@@ -32,9 +32,6 @@
 
 ## 更新插件
 
-> [!tip]
-> 此内容与**安装**插件类似,写给不会更新的人看的
-
 1. 老样子，从**MineBBS**下载最新版的[OPTools](https://www.minebbs.com/resources/optools-op-gui.4836/)  
 
 2. 把下载的插件上传到**Plugins**文件夹下  

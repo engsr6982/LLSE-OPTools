@@ -1,6 +1,7 @@
 ## 插件配置文件
 
-- 路径`./plugins/PPOUI/OPTools/Data/UserData.json`
+- 路径
+    - `./plugins/PPOUI/OPTools/Data/UserData.json`
 
 ### 配置文件详解
 

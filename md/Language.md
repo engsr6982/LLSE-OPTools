@@ -1,6 +1,7 @@
-### 语言文件
+### 语言文件 
 
-- 路径`./plugins/PPOUI/OPTools/Lang/Language.json`
+- 路径
+  - `./plugins/PPOUI/OPTools/Lang/Language.json`
 
 ### 语言文件详解
 
