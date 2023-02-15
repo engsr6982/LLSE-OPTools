@@ -78,11 +78,16 @@
           highlightColor: '#e96900',
         }
       },
-      //最好更新时间
+      //最后更新时间
       timeUpdater: {
         text: ">最后更新时间: {docsify-updated}新版插件正在开发，文档将重写，如有不懂来群里问",
         formatUpdated: "{YYYY}-{MM}-{DD} {HH}:{mm}",
         whereToPlace: "top",  // "top" or "bottom", default to "bottom"
+      },
+      HTML_Edit: {
+        text: "[📝 在Github编辑此页]({repo})\n",// 文字
+        repo: "https://github.com/engsr6982/engsr6982", //仓库链接
+        Position: "bottom"// 显示位置
       }
     }
   </script>
@@ -117,6 +122,8 @@
   <!--最后更新时间-->
   <script src="https://cdn.jsdelivr.net/npm/docsify-updated/src/time-updater.js"></script>
   <!--<script src="./assets/js/time-updater.js"></script>-->
+  <!--页面编辑-->
+  <script src="assets/js/HTML_Edit.js"></script>
 </body>
 
 </html>
