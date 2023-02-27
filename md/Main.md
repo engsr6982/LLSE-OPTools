@@ -60,6 +60,7 @@
 |Forms_Ui|发送表单|
 |Info_Ui|玩家详细信息|
 |Black_Cmd_Ui|命令黑名单|
+|Potion_Ui|药水GUI|
 
 > 更改配置文件后**控制台**输入`tools reload`即可重新加载配置文件  
 
