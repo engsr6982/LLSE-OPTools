@@ -1,7 +1,7 @@
 // 插件配置
 let HTML_Edit = {
   text: "[📝 Github Edit]({repo})\n",// 文字
-  repo: "https://github.com/engsr6982/engsr6982", //仓库链接
+  repo: "https://github.com/engsr6982/OPTools_Docs", //仓库链接
   Position: "bottom"// 显示位置
 }
 
