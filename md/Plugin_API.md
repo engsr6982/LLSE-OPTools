@@ -1,117 +1,62 @@
-> [!tip]
-> 以下所有接口调用均为 `ll.import(命名空间)` 详见[Liteloader BDS文档](https://docs.litebds.com/zh-Hans/#/LLSEPluginDevelopment/ScriptAPI/Ll?id=%e5%af%bc%e5%85%a5%e5%87%bd%e6%95%b0)     
-> **添加权限组**调用举例: 
-> ```javascript
-> const Permission_Group_add = ll.import(Permission_Group_add);
-> Permission_Group_add('114514');
-> ```
+## 内部表单接口   
+> 注意：此接口只需传入**玩家名或XUID**即可打开对应功能的表单，无任何权限检查，使用时请注意安全
+
+**导入接口**
+```javascript
+const Form_inside_API = ll.import('Form_inside_API');
+```
+
+`Form_inside_API(name/xuid, func)`
+- 参数:
+    - name/xuid: `String`
+    传入玩家名或XUID
+    - func: `String`
+    内部功能函数    
+    详见[主页文件-内部函数表](./md/Main.md)
+
+**调用举例**
+```javascript
+const Form_inside_API = ll.import('Form_inside_API');
+Form_inside_API('steve', 'Kick_Ui'); // 向Steve发送“踢出玩家”表单
+```
+
+***
 
 ## 权限组接口
 
-#### 添加一个权限组
-`Permission_Group_add(name)`
-- 参数:
-    - name: `String`  
-    权限组的名称
+**导入接口**
+```javascript
+const PERMISSION_GROUP = ll.import('PERMISSION_GROUP');
+```
 
-#### 删除一个权限组
-`Permission_Group_remove(guid)`
-- 参数:  
-    - guid: `String`  
-    权限组的GUID
+`PERMISSION_GROUP(type,str1,str2)`
+- 参数：   
+    - type： `String`   
+    操作类型，详见操作类型表   
+    - str1: `String`  
+    参数1
+    - str2: `String`  
+    参数2
 
-#### 获取指定权限组数据
-`Permission_Group_Appoint(guid)`
-- 参数:  
-    - guid: `String`  
-    权限组的GUID
-- 返回值: 权限组
-- 返回值类型：`Arry<Object...>`
+|类型(type)|参数(str1,str2)|返回值|返回值类型|功能|
+|--|--|--|--|--|
+|CREATE_GROUP|`name`权限组名称|权限组GUID|`String`|创建权限组|
+|DELETE_GROUP|`guid` 权限组ID|无|无|删除权限组|
+|ADD_PERMISSION|`guid` 权限组ID, `key` 权限值|是否添加成功|`Boolean`|添加权限|
+|DELETE_PERMISSIONS|`guid`权限组ID,` key` 权限值|无|无|删除权限|
+|ADD_USER|`guid` 权限组ID,`xuid` 玩家XUID|是否添加成功|`Boolean`|添加用户|
+|DELETE_USER|`guid` 权限组ID,`xuid` 玩家XUID|无|无|删除用户|
+|INSPECTION_TEAM|`guid` 权限组ID|是否存在|`Boolean`|权限组是否存在|
+|AFTER_INSPECTION|`guid` 权限组ID,`xuid` 玩家XUID|是否存在|`Boolean`|权限组是否有某个用户|
+|USERS_GROUP|`xuid` 用户XUID|权限组|`Boolean`,不存在则返回`Null`|获取用户所在权限组|
+|CHECK_PERMISSIONS|`xuid` 用户XUID,`key` 权限值|是否拥有|`Boolean`不存在则返回`Null`|用户所在权限组是否拥有权限|
+|ALL_GROUPS|无参数|权限组|`Arry<Object...>`|获取所有权限组|
+|GET_GROUP|`guid` 权限组|权限组|`Arry<Object...>`|获取指定权限组数据|
+|RENAME_GROUP|`guid` 权限组ID，`name` 要更改的名称|无|无|修改权限组名称|
 
-#### 权限组添加权限
-`Permission_Group_add_Permission(guid, key)`
-- 参数:  
-    - guid: `String`  
-    权限组的GUID
-    - key: `String`  
-    权限ID，详见[主页文件](./md/Main.md)的open项
-- 返回值: 是否添加成功
-- 返回值类型：`Boolean`
-
-#### 权限组删除权限
-`Permission_Group_remove_Permission(guid, key)`
-- 参数:  
-    - guid: `String`  
-    权限组的GUID
-    - key: `String`  
-    权限ID，详见[主页文件](./md/Main.md)的open项
-
-#### 权限组添加用户
-`Permission_Group_add_user(guid, xuid)`
-- 参数:  
-    - guid: `String`  
-    权限组的GUID
-    - xuid: `String`  
-    要添加的玩家XUID
-- 返回值: 是否添加成功
-- 返回值类型：`Boolean`
-
-#### 权限组删除用户
-`Permission_Group_remove_user(guid, xuid)`
-- 参数:  
-    - guid: `String`  
-    权限组的GUID 
-    - xuid: `String`  
-    要删除的玩家XUID
-
-#### 权限组是否存在
-`Permission_Group_Examine(guid)`
-- 参数:  
-    - guid: `String`  
-    权限组的GUID 
-- 返回值: 是否存在
-- 返回值类型：`Boolean`
-
-
-#### 权限组是否有某个用户
-`Permission_Group_User_Examine(guid, xuid)`
-- 参数:  
-    - guid: `String`  
-    权限组的GUID 
-    - xuid: `String`  
-    要查询的玩家XUID
-- 返回值: 是否存在
-- 返回值类型：`Boolean`
-
-#### 获取用户所在权限组
-`get_Permission_Group(xuid)`
-- 参数:  
-    - xuid: `String`  
-    要查询的玩家XUID
-- 返回值: 权限组
-- 返回值类型：`Boolean`   
-注意：如果玩家不存在于任何一个权限组将返回`Null`
-
-#### 用户所在权限组是否拥有权限
-`Permission_Group_user(xuid, key)`
-- 参数:  
-    - xuid: `String`  
-    要查询的玩家XUID
-    - key: `String`  
-    权限ID，详见[主页文件](./md/Main.md)的open项
-- 返回值: 是否拥有
-- 返回值类型：`Boolean`  
-注意：如果玩家不存在于任何一个权限组将返回`Null`
-
-#### 获取所有权限组
-`Permission_Group_list()`
-- 返回值:  权限组
-- 返回值类型：`Arry<Object...>`
-
-#### 修改权限组名称
-`Permission_Group_rname(guid, name)`
-- 参数:  
-    - guid: `String`  
-    权限组的GUID 
-    - name: `String`  
-    要修改的名称
+**调用举例**
+```javascript
+const PERMISSION_GROUP = ll.import('PERMISSION_GROUP');// 导入接口
+let id = PERMISSION_GROUP('CREATE_GROUP','新建权限组');//创建一个名为“新建权限组”的权限组,并获取GUID
+PERMISSION_GROUP('ADD_PERMISSION',id,'Kick_Ui');// 给刚刚创建的权限组，添加“踢出玩家”的权限
+```
