@@ -12,4 +12,3 @@
     * [语言文件](./md/Language.md)
 * [**开发者接口**](./md/Plugin_API.md)
 * [**更新日志**](./md/Update.md)
-* [**MCID_API**](./md/API.md)
