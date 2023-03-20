@@ -1,4 +1,4 @@
-![IMG_0758](./img/Logo_Background.png)
+![IMG_0758](./assets/image/logo_background.png)
 
 ## 前言
 为了确保最佳的使用体验，请仔细阅读文档   

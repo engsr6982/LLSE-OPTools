@@ -1,4 +1,4 @@
-![logo](./img/Logo.png)
+![logo](./assets/image/logo.png)
 
 # OP Tools <small>2.4.x</small>
 
