@@ -7,6 +7,7 @@
 * **配置文件**
     * [配置文件](./Config/Config.md)
     * [主页文件](./Config/Main.md)
+    * [命令绑定](./Config/BindCmd.md)
     * [按钮文件](./Config/Button.md)
     * [用户文件](./Config/User.md)
     * [语言文件](./Config/Language.md)

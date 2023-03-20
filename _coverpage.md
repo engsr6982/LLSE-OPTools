@@ -1,6 +1,6 @@
 ![logo](./assets/image/logo.png)
 
-# OP Tools <small>2.4.x</small>
+# OP Tools <small>2.5.x</small>
 
 - 方便好用的OP工具
 - 集合20种功能
