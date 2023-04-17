@@ -9,12 +9,13 @@
 
 ```json
 {
-    "version": "2.5.0",
+    "version": "2.5.3",
     "language": "zh_CN",//语言
     "BindCmd": false,//命令绑定
     "Network": true,//网络请求
     "Cleaner_API": false,//Cleaner扫地机API
     "FilterSimulatedPlayers": true,//过滤模拟玩家
+    "Motd_Enable": false,//关闭OPTools的motd功能
     "Motd": ["motd1", "motd2", "motd3"],//Motd内容
     "Motd_Time": 2000,//Motd切换时间
     "Kick_Txt": "你已被管理员踢出服务器",//踢出默认内容
