@@ -12,4 +12,5 @@
     * [用户文件](./Config/User.md)
     * [语言文件](./Config/Language.md)
 * [**开发者接口**](./Other/Plugin_API.md)
+* [**函数指南**](./Other/SecondaryDevelopment.md)
 * [**更新日志**](./Other/Update_Logs.md)
