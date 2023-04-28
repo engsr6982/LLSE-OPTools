@@ -29,6 +29,7 @@
 ```
 
 ## 导出函数  
+> **lib**文件夹  
 
 `Config.js`
 ```javascript
@@ -72,9 +73,25 @@ exports.Tr = Tr;//函数 默认翻译文件
 exports.Permission_Group = Permission_Group;//对象函数
 ```
 
+`require.js`
+```js
+exports.MAPPING_TABLE = MAPPING_TABLE;//常量 对象
+```
+
+> `Plugins`文件夹
+
+`Main.js`
+```js
+exports.Main = Main;//函数
+```
+
+`Menu_Seting.js`
+```js
+exports.Main_Set = Main_Set;//函数
+```
+
 `.js`
 ```js
 
 ```
-
 
