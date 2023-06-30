@@ -27,6 +27,9 @@ Form_inside_API('steve', 'Kick_Ui'); // 向Steve发送“踢出玩家”表单
 
 ## 权限组接口
 
+> [!tip]  
+> 此模块已重构、待插件更新后更新此页面
+
 **导入接口**
 ```javascript
 const PERMISSION_GROUP = ll.import('PERMISSION_GROUP');
