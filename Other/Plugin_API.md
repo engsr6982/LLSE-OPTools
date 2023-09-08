@@ -1,47 +1,51 @@
-> [!warning]
-> 注意：API接口的返回值可能会随插件更新变动，具体以插件内部为准
+# API接口
 
-## 内部表单接口   
+## 内部表单接口
+>
 > 注意：此接口只需传入**玩家名或XUID**即可打开对应功能的表单，无任何权限检查，使用时请注意安全
 
-**导入接口**
+> 导入接口
+
 ```javascript
 const Form_inside_API = ll.import('Form_inside_API');
 ```
 
 `Form_inside_API(name/xuid, func)`
-- 参数:
-    - name/xuid: `String`
-    传入玩家名或XUID
-    - func: `String`
-    内部功能函数    
-    详见[主页文件-内部函数表](./Config/Main.md)
 
-**调用举例**
+- 参数:
+  - name/xuid: `String`
+    传入玩家名或XUID
+  - func: `String`
+    内部功能函数
+    详见[首页](./README.md#功能一览表)
+
+> 调用举例
+
 ```javascript
 const Form_inside_API = ll.import('Form_inside_API');
 Form_inside_API('steve', 'Kick_Ui'); // 向Steve发送“踢出玩家”表单
 ```
 
-***
 
 ## 权限组接口
 
-> [!tip]  
-> 此模块已重构、待插件更新后更新此页面
+> [!tip]
+> 此模块已重构、待插件更新后更新此接口内容
 
-**导入接口**
+> 导入接口
+
 ```javascript
 const PERMISSION_GROUP = ll.import('PERMISSION_GROUP');
 ```
 
 `PERMISSION_GROUP(type,str1,str2)`
-- 参数：   
-    - type： `String`   
-    操作类型，详见操作类型表   
-    - str1: `String`  
+
+- 参数：
+  - type： `String`
+    操作类型，详见操作类型表
+  - str1: `String`  
     参数1
-    - str2: `String`  
+  - str2: `String`  
     参数2
 
 |类型(type)|参数(str1,str2)|返回值|返回值类型|功能|
@@ -49,7 +53,7 @@ const PERMISSION_GROUP = ll.import('PERMISSION_GROUP');
 |CREATE_GROUP|`name`权限组名称|权限组GUID|`String`|创建权限组|
 |DELETE_GROUP|`guid` 权限组ID|无|无|删除权限组|
 |ADD_PERMISSION|`guid` 权限组ID, `key` 权限值|是否添加成功|`Boolean`|添加权限|
-|DELETE_PERMISSIONS|`guid`权限组ID,` key` 权限值|无|无|删除权限|
+|DELETE_PERMISSIONS|`guid`权限组ID,`key` 权限值|无|无|删除权限|
 |ADD_USER|`guid` 权限组ID,`xuid` 玩家XUID|是否添加成功|`Boolean`|添加用户|
 |DELETE_USER|`guid` 权限组ID,`xuid` 玩家XUID|无|无|删除用户|
 |INSPECTION_TEAM|`guid` 权限组ID|是否存在|`Boolean`|权限组是否存在|
@@ -61,6 +65,7 @@ const PERMISSION_GROUP = ll.import('PERMISSION_GROUP');
 |RENAME_GROUP|`guid` 权限组ID，`name` 要更改的名称|无|无|修改权限组名称|
 
 **调用举例**
+
 ```javascript
 const PERMISSION_GROUP = ll.import('PERMISSION_GROUP');// 导入接口
 let id = PERMISSION_GROUP('CREATE_GROUP','新建权限组');//创建一个名为“新建权限组”的权限组,并获取GUID

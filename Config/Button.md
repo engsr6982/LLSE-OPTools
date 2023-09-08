@@ -1,25 +1,29 @@
+# /data/ButtonData.json
+
 ## 按钮配置文件
 
+> 此文件用于定义`编辑游戏规则、获取隐藏方块`显示的按钮
+
 - 路径
-    - `./plugins/PPOUI/OPTools/Data/ButtonData.json`
+  - `./plugins/PPOUI/OPTools/Data/ButtonData.json`
 
 ### 关于自定义  
+
 - 自定义**游戏规则**  
     1. 如果当前游戏规则有缺失，你可以根据格式自行添加游戏规则  
-    2. 某些游戏规则缺少或者需要GUI可以向作者反馈进行添加   
+    2. 某些游戏规则缺少或者需要GUI可以在Github Issue反馈
 
 - 自定义**获取方块**
-    1. 可自行根据格式添加方块   
+    1. 可自行根据格式添加方块
     > [!warning]
-    > 不支持特殊方块/物品   
-    > 例如：带有特殊值的方块`玻璃、混凝土`   
+    > 不支持特殊方块/物品
+    > 例如：带有特殊值的方块`玻璃、混凝土`
 
 > 更改配置文件后**控制台**输入`tools reload`即可重新加载配置文件  
 
 ### 配置文件详解
 
 - `json文件不允许添加注释，请勿直接复制`  
-
 
 ```json
 {
@@ -133,7 +137,7 @@
             "type": "commandblockoutput"
         }
     ],
-    "Block": [//获取方块
+    "Block": [//获取隐藏方块
         {
             "name": "§l命令方块", //名称
             "image": "textures/ui/creator_glyph_color", //图片

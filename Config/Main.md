@@ -1,28 +1,34 @@
+# /data/MainGUI.json
+
 ## 主页配置文件
 
+> 此文件用于定义OPTools主表单显示内容
+
 - 路径
-    - `./plugins/PPOUI/OPTools/Data/MainGUI.json`
+  - `./plugins/PPOUI/OPTools/Data/MainGUI.json`
 
-### 关于自定义
+### 关于JSON定义
 
-**这是一个钮所需要的参数**   
+> 这是一个钮所需要的参数
+
 - `name`**名称**
-    - 表单的显示名称
+  - 表单的显示名称
 - `image`**图片**
-    - 按钮左边显示的图片
-        - 填写`路径/URL`, 如不需要图片留空即可
+  - 按钮左边显示的图片
+    - 填写`路径/URL`, 如不需要图片留空即可
 - `type`**类**，表单打开类型
-    - `type`目前有三个可用的类
-        - `inside`
-            插件内部函数，如`Kill_Ui`
-        - `command`
-            执行命令
-        - `form`
-            为一般子菜单
-- `open`**开**    
+  - `type`目前有三个可用的类
+    - `inside`
+        插件内部函数，如`Kill_Ui`
+    - `command`
+        执行命令
+    - `form`
+        为一般子菜单
+- `open`**开**  
     是使用的命令或者表单文件名或内部函数名(`不用加后缀`)
 
 例如：
+
 ```json
 {
     "name": "杀死玩家",
@@ -31,40 +37,19 @@
     "open": "Kill_Ui"
 }
 ```
+
 - `type`为`inside`
 - `open`为`Kill_Ui`
-    - 表示**调用插件内部函数，并打开Kill_Ui**
+  - 表示**调用插件内部函数，并打开Kill_Ui函数**
 
 - `inside`内部函数列表
 
-|内部函数名|对应功能|
-|:--|--|
-|Kick_Ui|踢出玩家|
-|Kill_Ui|杀死玩家|
-|Weather_Ui|更改天气|
-|Time_Ui|更改时间|
-|Broad_Ui|广播消息|
-|Motd_Ui|设置MOTD|
-|Set_Player_Ui|设置人数|
-|Tp_Ui|玩家传送|
-|Clear_Item_Ui|清理掉落物|
-|setMode_Ui|更改游戏模式|
-|setRule_Ui|更改游戏规则|
-|getBlock_Ui|获取隐藏方块|
-|ConsoleCmd_Ui|执行后台命令|
-|sendPlayer_Ui|发消息给玩家|
-|Crash_Ui|崩溃玩家客户端|
-|Player_Talk_Ui|以玩家身份说话|
-|Player_Cmd_Ui|玩家身份执行命令|
-|Ban_Ui|Ban GUI|
-|Forms_Ui|发送表单|
-|Info_Ui|玩家详细信息|
-|Black_Cmd_Ui|命令黑名单|
-|Potion_Ui|药水GUI|
-
+> [!tip]
+> [点我前往查看内部函数定义](./README.md#功能一览表)
+>
 > 更改配置文件后**控制台**输入`tools reload`即可重新加载配置文件  
 
-### 配置文件详解
+### 文件详解
 
 - `json文件不允许添加注释，请勿直接复制`  
 
