@@ -9,11 +9,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
   <link rel="icon" href="./assets/image/logo.png">
   <!--默认主题CSS-->
-  <!--<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css">-->
   <link rel="stylesheet" href="./assets/css/vue.css" />
   <!--夜间模式CSS-->
-  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify-darklight-theme@latest/dist/style.min.css">
-  <!--<link rel="stylesheet" href="./assets/css/style.min.css" />-->
+  <link rel="stylesheet" href="./assets/css/style.min.css" />
   <!--无边框按钮CSS-->
   <link rel="stylesheet" href="assets/css/button.css" />
 </head>
@@ -29,7 +27,7 @@
       //封面
       coverpage: true,
       //导航栏
-      loadNavbar: true,
+      loadNavbar: false,
       //回到顶部
       auto2top: true,
       //层级
@@ -37,9 +35,9 @@
       //小屏设备下合并导航栏到侧边栏
       mergeNavbar: true,
       //提示美化
-      'flexible-alerts': {
-        style: 'flat'
-      },
+      // 'flexible-alerts': {
+      //   style: 'flat'
+      // },
       pagination: {
         previousText: '上一章节',
         nextText: '下一章节',
@@ -83,47 +81,38 @@
         text: ">最后更新时间: {docsify-updated}",
         formatUpdated: "{YYYY}-{MM}-{DD} {HH}:{mm}",
         whereToPlace: "top",  // "top" or "bottom", default to "bottom"
-      },
+      }/* ,
       HTML_Edit: {
         text: "[📝 在Github编辑此页]({repo})\n",// 文字
         repo: "https://github.com/engsr6982/OPTools_Docs", //仓库链接
         Position: "bottom"// 显示位置
-      }
+      } */
     }
   </script>
   <!--JS依赖-->
-  <script src="https://unpkg.com/docsify/lib/docsify.min.js"></script>
-  <!--<script src="./assets/js/docsify.min.js"></script>-->
+  <script src="./assets/js/docsify.min.js"></script>
   <!--搜索-->
-  <script src="https://unpkg.com/docsify/lib/plugins/search.min.js"></script>
-  <!--<script src="./assets/js/search.min.js"></script>-->
+  <script src="./assets/js/search.min.js"></script>
   <!--复制-->
-  <script src="https://unpkg.com/docsify-copy-code/dist/docsify-copy-code.min.js"></script>
-  <!--<script src="./assets/js/docsify-copy-code.min.js"></script>-->
+  <script src="./assets/js/docsify-copy-code.min.js"></script>
   <!--提示美化-->
-  <!--<script src="https://unpkg.com/docsify-plugin-flexible-alerts/dist/docsify-plugin-flexible-alerts.min.js"></script>-->
   <script src="./assets/js/docsify-plugin-flexible-alerts.min.js"></script>
   <!-- 图片放大缩小支持 -->
-  <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/zoom-image.min.js"></script>
-  <!--<script src="./assets/js/zoom-image.min.js"></script>-->
+  <script src="./assets/js/zoom-image.min.js"></script>
   <!--进度条-->
-  <script src="https://cdn.jsdelivr.net/npm/docsify-progress@latest/dist/progress.min.js"></script>
-  <!--<script src="./assets/js/progress.min.js"></script>-->
+  <script src="./assets/js/progress.min.js"></script>
   <!--JSON高亮-->
   <script src="assets/js/prism-json.min.js"></script>
   <!--日志高亮-->
   <script src="assets/js/prism-log.min.js"></script>
   <!--夜间模式-->
-  <script src="//cdn.jsdelivr.net/npm/docsify-darklight-theme@latest/dist/index.min.js"></script>
-  <!--<script src="./assets/js/index.min.js"></script>-->
+  <script src="./assets/js/index.min.js"></script>
   <!--上下章节-->
-  <script src="//unpkg.com/docsify-pagination/dist/docsify-pagination.min.js"></script>
-  <!--<script src="./assets/js/docsify-pagination.min.js"></script>-->
+  <script src="./assets/js/docsify-pagination.min.js"></script>
   <!--最后更新时间-->
-  <script src="https://cdn.jsdelivr.net/npm/docsify-updated/src/time-updater.js"></script>
-  <!--<script src="./assets/js/time-updater.js"></script>-->
+  <!-- <script src="./assets/js/time-updater.js"></script> -->
   <!--页面编辑-->
-  <script src="assets/js/HTML_Edit.js"></script>
+  <!-- <script src="assets/js/HTML_Edit.js"></script> -->
 </body>
 
 </html>
