@@ -1,0 +1,59 @@
+{
+  "env": {
+    "es6": true,
+    "node": true
+  },
+  "plugins": [
+    "@typescript-eslint"
+  ],
+  "parserOptions": {
+    "ecmaVersion": 2022,
+    "sourceType": "module"
+  },
+  "globals": {
+    "ll": "readonly",
+    "mc": "readonly",
+    "i18n": "readonly",
+    "file": "readonly",
+    "data": "readonly",
+    "File": "readonly",
+    "money": "readonly",
+    "logger": "readonly",
+    "IntPos": "readonly",
+    "FloatPos": "readonly",
+    "system": "readonly",
+    "network": "readonly",
+    "Version": "readonly",
+    "colorLog": "readonly",
+    "PermType": "readonly",
+    "ParamType": "readonly",
+    "Permission": "readonly",
+    "KVDatabase": "readonly",
+    "LLSE_Player": "readonly",
+    "JsonConfigFile": "readonly"
+  },
+  "rules": {
+    "no-unused-vars": "warn",
+    "no-console": "error",
+    "no-ex-assign": "error",
+    "complexity": [
+      "warn",
+      15
+    ],
+    "no-undef": "error",
+    "no-fallthrough": "error",
+    "no-shadow": "warn",
+    "no-invalid-this": "error",
+    "no-duplicate-case": "error",
+    "no-cond-assign": "error",
+    "no-const-assign": "error",
+    "no-var": "warn"
+  },
+  "root": true,
+  "parser": "@typescript-eslint/parser",
+  "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended"
+  ]
+}

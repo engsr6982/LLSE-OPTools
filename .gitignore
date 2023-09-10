@@ -1,0 +1,15 @@
+
+node_modules
+
+out
+
+# 压缩文件
+*.zip
+
+# 图片文件
+*.png
+*.jpg
+
+old
+
+build/PPOUI/OPTools/lib

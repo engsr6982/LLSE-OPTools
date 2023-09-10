@@ -1,0 +1,20 @@
+{
+  "name": "optools",
+  "version": "3.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc -w",
+    "lint": "eslint ./src --ext .ts",
+    "lint:fix": "eslint ./src --ext .ts --fix"
+  },
+  "keywords": [],
+  "author": "PPOUI",
+  "license": "ISC",
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^6.6.0",
+    "@typescript-eslint/parser": "^6.6.0",
+    "eslint": "^8.49.0"
+  }
+}
