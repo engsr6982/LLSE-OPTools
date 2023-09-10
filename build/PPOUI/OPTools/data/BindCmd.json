@@ -1,0 +1,9 @@
+[
+    {
+        "command": "banui",
+        "describe": "Ban GUI",
+        "permType": "Admin",
+        "pluginPermissionGroup": false,
+        "function": "Ban_Ui"
+    }
+]

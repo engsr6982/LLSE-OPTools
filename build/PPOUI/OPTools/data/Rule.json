@@ -1,0 +1,113 @@
+{
+    "version": "3.0.0",
+    "data": [
+        {
+            "name": "随机刻",
+            "image": "",
+            "introduce": "每游戏刻每区段中随机的方块刻发生的频率",
+            "rule": "randomTickSpeed"
+        },
+        {
+            "name": "误伤/PVP",
+            "image": "",
+            "introduce": "玩家之间能否造成伤害",
+            "rule": "pvp"
+        },
+        {
+            "name": "显示坐标",
+            "image": "",
+            "introduce": "是否在聊天框区域持续实时显示玩家坐标",
+            "rule": "showcoordinates"
+        },
+        {
+            "name": "火焰蔓延",
+            "image": "",
+            "introduce": "火是否蔓延及自然熄灭",
+            "rule": "dofiretick"
+        },
+        {
+            "name": "TNT爆炸",
+            "image": "",
+            "introduce": "TNT是否会爆炸",
+            "rule": "tntexplodes"
+        },
+        {
+            "name": "生物掉落",
+            "image": "",
+            "introduce": "生物在死亡时是否掉落物品",
+            "rule": "domobloot"
+        },
+        {
+            "name": "方块掉落",
+            "image": "",
+            "introduce": "方块被破坏时是否掉落物品",
+            "rule": "dotiledrops"
+        },
+        {
+            "name": "立即重生",
+            "image": "",
+            "introduce": "玩家死亡时是否不显示死亡界面直接重生",
+            "rule": "doimmediaterespawn"
+        },
+        {
+            "name": "重生半径",
+            "image": "",
+            "introduce": "首次进入服务器的玩家和没有重生点的死亡玩家在重生时与世界重生点坐标的距离",
+            "rule": "spawnradius"
+        },
+        {
+            "name": "昼夜更替",
+            "image": "",
+            "introduce": "是否进行昼夜更替和月相变化",
+            "rule": "dodaylightcycle"
+        },
+        {
+            "name": "天气更替",
+            "image": "",
+            "introduce": "天气是否变化",
+            "rule": "doweathercycle"
+        },
+        {
+            "name": "生物生成",
+            "image": "",
+            "introduce": "生物是否自然生成",
+            "rule": "domobspawning"
+        },
+        {
+            "name": "生物破坏",
+            "image": "",
+            "introduce": "生物是否能够进行破坏",
+            "rule": "mobgriefing"
+        },
+        {
+            "name": "实体掉落",
+            "image": "",
+            "introduce": "非生物实体是否掉落物品",
+            "rule": "doentitydrops"
+        },
+        {
+            "name": "幻翼生成",
+            "image": "",
+            "introduce": "幻翼是否在夜晚生成",
+            "rule": "doinsomnia"
+        },
+        {
+            "name": "死亡不掉落",
+            "image": "",
+            "introduce": "玩家死亡后是否保留物品栏物品、经验",
+            "rule": "keepinventory"
+        },
+        {
+            "name": "命令方块开关",
+            "image": "",
+            "introduce": "命令方块在游戏中是否被启用",
+            "rule": "commandblocksenabled"
+        },
+        {
+            "name": "命令方块输出",
+            "image": "",
+            "introduce": "命令方块执行命令时是否在聊天框中向管理员显示",
+            "rule": "commandblockoutput"
+        }
+    ]
+}
