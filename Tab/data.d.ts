@@ -50,3 +50,5 @@ interface UIData {
         }
     ]
 }
+
+type MotdData = Array<string>

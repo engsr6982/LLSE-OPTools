@@ -1,5 +1,2 @@
-import { RegCommand } from "./Command/RegCommand";
+import { tr } from "./utils/i18n.js";
 
-RegCommand()
-
-console.log()
