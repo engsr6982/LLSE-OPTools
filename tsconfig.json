@@ -109,6 +109,6 @@
     // "skipDefaultLibCheck": true,                      /* Skip type checking .d.ts files that are included with TypeScript. */
     "skipLibCheck": true,                                 /* Skip type checking all .d.ts files. */
 
-    "removeComments": false/* 注释是否被编译 */
+    "removeComments": true/* 是否去除注释 */
   }
 }
