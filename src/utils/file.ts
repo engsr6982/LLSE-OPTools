@@ -25,7 +25,6 @@ export class fileOperation {
         return file.writeTo(pluginFolderPath.global + pluginFile.config, newConfig);
     }
 
-
     /**
      * data中是否存在指定文件
      * @param fileName 文件名 a.json

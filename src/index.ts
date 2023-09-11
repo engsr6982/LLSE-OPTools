@@ -1,4 +1,4 @@
-import { dataOperation } from "./file/data.js";
+import { dataOperation } from "./utils/data.js";
 import { pluginInformation } from "./utils/GlobalVars.js";
 
 logger.info(`Loading...\n
@@ -9,17 +9,22 @@ logger.info(`Loading...\n
                 | |__| | |         | | (_) | (_) | \\__ \\
                  \\____/|_|         |_|\\___/ \\___/|_|___/\n
     ---- ${pluginInformation.minebbs} ----
-                        Author: ${pluginInformation.author}   Version: ${pluginInformation.version.join('.').replace(/,/g, '.')}
+                        Author: ${pluginInformation.author}   Version: ${pluginInformation.version.join(".").replace(/,/g, ".")}
 `);
 
 // 注册插件
-ll.registerPlugin(pluginInformation.name, pluginInformation.introduce, pluginInformation.version, { "Author": pluginInformation.author })
+ll.registerPlugin(pluginInformation.name, pluginInformation.introduce, pluginInformation.version, { Author: pluginInformation.author });
 
 // 设置日志
 if (file.exists(".\\plugins\\PPOUI\\debug")) {
     logger.setLogLevel(5);
     logger.setTitle(pluginInformation.name + "Debug");
     logger.warn(`The debug mode is already enabled`);
+    mc.listen("onUseItemOn", (pl, it) => {
+        if (it.type == "minecraft:clock") {
+            pl.runcmd("tools");
+        }
+    });
 }
 
 // 加载文件

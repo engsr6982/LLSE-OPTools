@@ -1,12 +1,12 @@
 import { pluginFolderPath } from "../enums/GlobalEnums.js";
-import { config } from "../file/data.js";
-import { fileOperation } from "../file/file.js";
+import { config } from "./data.js";
+import { fileOperation } from "./file.js";
 
 const _language = {
-    "zh_CN": {
-        "introduce": "{0} 管理工具"
-    }
-}
+    zh_CN: {
+        introduce: "{0} 管理工具",
+    },
+};
 
 let loadLanguage: string;
 

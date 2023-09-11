@@ -40,7 +40,7 @@
       "warn",
       15
     ],
-    "no-undef": "error",
+    // "no-undef": "error",
     "no-fallthrough": "error",
     "no-shadow": "warn",
     "no-invalid-this": "error",
