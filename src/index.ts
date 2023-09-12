@@ -1,3 +1,4 @@
+import { regCommand } from "./Command/RegCommand.js";
 import { dataOperation } from "./utils/data.js";
 import { pluginInformation } from "./utils/GlobalVars.js";
 import { load_i18n } from "./utils/i18n.js";
@@ -33,3 +34,6 @@ dataOperation.load() ? logger.info(`Loading files successfully`) : logger.error(
 
 // 加载i18n
 load_i18n();
+
+// 注册命令
+regCommand();
