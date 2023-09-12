@@ -2,5 +2,6 @@
     "editor.formatOnSave": true,
     "prettier.semi": true,
     "prettier.tabWidth": 4,
-    "prettier.printWidth": 9999999
+    "prettier.printWidth": 9999999,
+    "extension.llseaids.reloadCommand": "ll reload \"OPTools\""
 }
