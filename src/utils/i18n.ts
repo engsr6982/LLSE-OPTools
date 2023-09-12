@@ -6,6 +6,7 @@ import { parseError } from "./parseError.js";
 const _language = {
     zh_CN: {
         introduce: "{0} 管理工具",
+        formClose: "表单已放弃",
         command: {
             failedToObtainXuid: "获取玩家{0}的XUID失败！",
             addAdministrator: "添加插件管理员{0}成功",
@@ -14,6 +15,13 @@ const _language = {
             removingAdministratorFailed: "移除插件管理员{0}失败，可能玩家不是插件管理员",
             reload: "操作成功",
             failedToObtainPlayerObject: "获取玩家对象失败",
+        },
+        indexForm: {
+            formTitle: "{0} | 主页",
+            formContent: "· 选择一个操作",
+            noFunction: "您当前所在权限组无任何可用功能！",
+            configurationError: "表单type属性配置错误，无法执行任何操作",
+            theSubformDoesNotExist: "子表单文件{0}不存在!",
         },
     },
 };

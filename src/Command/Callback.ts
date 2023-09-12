@@ -1,5 +1,6 @@
 import { perm, perm_Form } from "../Perm/index.js";
 import { indexForm } from "../form/index.js";
+import { color } from "../modules/Color.js";
 import { dataOperation } from "../utils/data.js";
 import { tr } from "../utils/i18n.js";
 
@@ -38,7 +39,7 @@ const call = {
     },
     reload: (_: Command, ori: CommandOrigin, out: CommandOutput /* , res: resItem */): void => {
         dataOperation.load();
-        out.success(tr("command.reload"));
+        out.success(color.bgGreen + tr("command.reload"));
     },
     mgr: (_: Command, ori: CommandOrigin, out: CommandOutput /* , res: resItem */): boolean => {
         const { player } = ori;
