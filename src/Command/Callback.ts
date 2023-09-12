@@ -4,7 +4,7 @@ import { dataOperation } from "../utils/data.js";
 import { tr } from "../utils/i18n.js";
 
 interface resItem {
-    ac: "add" | "remove" | "reload" | "mgr";
+    ac: "add" | "remove" | "reload" | "mgr" | "gui";
     name: string;
 }
 
@@ -21,7 +21,7 @@ const call = {
         if (!xuid) return out.error(tr("command.failedToObtainXuid", { 0: name }));
 
         // 进行增加管理员
-        perm.addOP(xuid) ? out.success(tr("addAdministrator", { 0: name })) : out.error(tr("addingAdministratorFailed", { 0: res.name }));
+        perm.addOP(xuid) ? out.success(tr("command.addAdministrator", { 0: name })) : out.error(tr("command.addingAdministratorFailed", { 0: res.name }));
     },
     remove: (_: Command, ori: CommandOrigin, out: CommandOutput, res: resItem): boolean => {
         const { type } = ori;
@@ -34,15 +34,15 @@ const call = {
         if (!xuid) return out.error(tr("command.failedToObtainXuid", { 0: name }));
 
         // 进行移除管理员
-        perm.deOP(xuid) ? out.success(tr("removeAdministrator", { 0: name })) : out.error(tr("removingAdministratorFailed", { 0: res.name }));
+        perm.deOP(xuid) ? out.success(tr("command.removeAdministrator", { 0: name })) : out.error(tr("command.removingAdministratorFailed", { 0: res.name }));
     },
     reload: (_: Command, ori: CommandOrigin, out: CommandOutput /* , res: resItem */): void => {
         dataOperation.load();
-        out.success(tr("reload"));
+        out.success(tr("command.reload"));
     },
     mgr: (_: Command, ori: CommandOrigin, out: CommandOutput /* , res: resItem */): boolean => {
         const { player } = ori;
-        if (!player) return out.error(tr("failedToObtainPlayerObject"));
+        if (!player) return out.error(tr("command.failedToObtainPlayerObject"));
         // 打开表单
         perm_Form.index(player);
     },
@@ -50,11 +50,11 @@ const call = {
 
 export function command_callback(_: Command, ori: CommandOrigin, out: CommandOutput, res: resItem) {
     if (Object.prototype.hasOwnProperty.call(call, res.ac)) {
-        call[res.ac](_, ori, out, res);
+        return call[res.ac](_, ori, out, res);
     }
     // default
     const { player } = ori;
-    if (!player) return out.error(tr("failedToObtainPlayerObject"));
+    if (!player) return out.error(tr("command.failedToObtainPlayerObject"));
     // 打开表单
     indexForm(ori.player);
 }

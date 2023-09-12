@@ -30,7 +30,9 @@ export function regCommand() {
         cmd.overload(["reload"]);
 
         // tools
-        cmd.overload([]);
+        cmd.setEnum("gui", ["gui"]);
+        cmd.optional("ac", ParamType.Enum, "gui");
+        cmd.overload(["gui"]);
 
         cmd.setCallback(command_callback);
         return cmd.setup();
