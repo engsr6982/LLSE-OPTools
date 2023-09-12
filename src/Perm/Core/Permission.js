@@ -178,7 +178,6 @@ export default class PermissionGroup {
      * 添加权限
      * @param {String} name 权限组名称
      * @param {String} perm 权限
-     * @param {Boolean} 是否添加成功
      */
     addPerm(name, perm) {
         if (!this._isGroup(name)) return false;

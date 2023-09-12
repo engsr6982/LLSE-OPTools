@@ -17,7 +17,7 @@ export const _Perm_Object = {
 export const perm = new PermissionGroup(pluginFolderPath.data + "Perm.json", false);
 
 /** 权限组GUI */
-export const perm_Form = new PermGroup_Form(pluginFolderPath.lang + "PermLang");
+export const perm_Form = new PermGroup_Form(pluginFolderPath.lib + "Perm\\GUI\\");
 
 /** 权限组GUI表单标题 */
 export const GUI_Title = tr("introduce", { 0: pluginInformation.name });

@@ -1,3 +1,1 @@
-{
-    "introduce": "{0} 管理工具"
-}
+{"introduce":"{0} 管理工具","command":{"failedToObtainXuid":"获取玩家{0}的XUID失败！","addAdministrator":"添加插件管理员{0}成功","addingAdministratorFailed":"添加插件管理员{0}失败，可能玩家已是插件管理员","removeAdministrator":"移除插件管理员{0}成功","removingAdministratorFailed":"移除插件管理员{0}失败，可能玩家不是插件管理员","reload":"操作成功","failedToObtainPlayerObject":"获取玩家对象失败"}}
