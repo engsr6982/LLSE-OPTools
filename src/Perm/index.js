@@ -1,6 +1,5 @@
 import { pluginFolderPath } from "../enums/GlobalEnums.js";
 import { pluginInformation } from "../utils/GlobalVars.js";
-import { tr } from "../utils/i18n.js";
 import PermissionGroup from "./Core/Permission.js";
 import PermGroup_Form from "./GUI/Form.js";
 
@@ -17,7 +16,7 @@ export const _Perm_Object = {
 export const perm = new PermissionGroup(pluginFolderPath.data + "Perm.json", false);
 
 /** 权限组GUI */
-export const perm_Form = new PermGroup_Form(pluginFolderPath.lib + "Perm\\GUI\\");
+export const perm_Form = new PermGroup_Form(pluginFolderPath.lang + "PermLang");
 
 /** 权限组GUI表单标题 */
-export const GUI_Title = tr("introduce", { 0: pluginInformation.name });
+export const GUI_Title = pluginInformation.name;

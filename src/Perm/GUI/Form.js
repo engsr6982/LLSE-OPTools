@@ -1,15 +1,22 @@
 import { proxyObject } from "../Core/Proxy.js";
 import { GUI_Title, perm } from "../index.js";
+import { _languages } from "./language.js";
 
 /**
  * @author engsr6982
  */
 export default class PermGroup_Form {
     /**
-     * 
      * @param {String} path 语言文件夹
      */
     constructor(path) {
+        if (!file.exists(path + "\\zh_CN.json")) file.writeTo(path + "\\zh_CN.json", JSON.stringify(_languages.zh_CN));
+        this.loadPath = path;
+        this.init_i18n(path);
+    }
+
+    init_i18n(path) {
+        logger.debug(path);
         i18n.load(path, "zh_CN");
     }
 
@@ -47,6 +54,8 @@ export default class PermGroup_Form {
      * @param {Player} player 
      */
     index(player) {
+        // 二次检查i18n是否正常加载
+        if (this.tr("title") == "title") this.init_i18n(this.loadPath);
         if (!perm.isOP(player.xuid)) return player.tell("No permission");
         const fm = this.simpleForm();
         fm.addButton(this.tr("index.0"), "textures/ui/icon_book_writable.png");/* 0 */
