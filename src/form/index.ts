@@ -8,6 +8,12 @@ import { parseError } from "../utils/parseError.js";
 import { fileOperation } from "../utils/file.js";
 
 export function indexForm(player: Player, data: UIData = ui) {
+    // 初步检查权限
+    if (!perm.isOP(player.xuid) && !perm.getUserInGroup(player.xuid)) {
+        // 不是OP，不是用户
+        return player.tell(gmTell + tr("indexForm.noPermissions"));
+    }
+    // 构建主表单
     const fm = mc.newSimpleForm();
     fm.setTitle(tr("indexForm.formTitle", { 0: pluginInformation.name }));
     fm.setContent(tr("indexForm.formContent"));
@@ -27,30 +33,30 @@ export function indexForm(player: Player, data: UIData = ui) {
     // 检查是否无任何可用功能
     if (newArray.length === 0) return player.tell(gmTell + tr("indexForm.noFunction"));
     // 发送表单
-    player.sendForm(fm, (player: Player, id: number) => {
-        if (id == null) return player.tell(tr("formClose"));
+    player.sendForm(fm, (player2: Player, id: number) => {
+        if (id == null) return player2.tell(gmTell + tr("formClose"));
         switch (newArray[id].type) {
             case "inside":
                 // 通过映射调用函数
-                functionMappingTable[newArray[id].open](player);
+                functionMappingTable[newArray[id].open](player2);
                 break;
             case "cmd":
-                player.runcmd(newArray[id].open);
+                player2.runcmd(newArray[id].open);
                 break;
             case "form":
                 try {
                     if (!file.exists(pluginFolderPath.data + newArray[id].open)) {
                         // 文件不存在
-                        return player.tell(gmTell + tr("indexForm.theSubformDoesNotExist", { 0: newArray[id].open }));
+                        return player2.tell(gmTell + tr("indexForm.theSubformDoesNotExist", { 0: newArray[id].open }));
                     }
                     // 调用表单
-                    indexForm(player, JSON.parse(fileOperation.getData(newArray[id].open)));
+                    indexForm(player2, JSON.parse(fileOperation.getData(newArray[id].open)));
                 } catch (err) {
                     parseError(err);
                 }
                 break;
             default:
-                player.tell(gmTell + tr("indexForm.configurationError"));
+                player2.tell(gmTell + tr("indexForm.configurationError"));
                 logger.error(tr("indexForm.configurationError"));
         }
     });

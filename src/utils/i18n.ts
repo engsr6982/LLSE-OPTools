@@ -22,6 +22,12 @@ const _language = {
             noFunction: "您当前所在权限组无任何可用功能！",
             configurationError: "表单type属性配置错误，无法执行任何操作",
             theSubformDoesNotExist: "子表单文件{0}不存在!",
+            noPermissions: "无权限！",
+        },
+        plugins: {
+            kick: {
+                formTitle: "{0} | 踢出玩家",
+            },
         },
     },
 };

@@ -37,7 +37,11 @@ const call = {
         // 进行移除管理员
         perm.deOP(xuid) ? out.success(tr("command.removeAdministrator", { 0: name })) : out.error(tr("command.removingAdministratorFailed", { 0: res.name }));
     },
-    reload: (_: Command, ori: CommandOrigin, out: CommandOutput /* , res: resItem */): void => {
+    reload: (_: Command, ori: CommandOrigin, out: CommandOutput /* , res: resItem */): boolean => {
+        const { type } = ori;
+        // 检查是否为控制台
+        if (type !== 7) return out.error("No permission, this command is only used by the console!");
+        // 调用加载函数以实现重载
         dataOperation.load();
         out.success(color.bgGreen + tr("command.reload"));
     },

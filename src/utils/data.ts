@@ -314,7 +314,7 @@ const __inits = {
                 name: "踢出玩家",
                 image: "textures/ui/permissions_visitor_hand",
                 type: "inside",
-                open: "Kick_Ui",
+                open: "kick",
             },
             {
                 name: "杀死玩家",
