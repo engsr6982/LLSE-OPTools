@@ -53,8 +53,8 @@ type UI_Data_Item = Array<_UIDataItems>;
 interface _UIDataItems {
     name: string;
     image: string;
-    type: "inside" | "cmd" | "form";
-    open: string;
+    type: "inside" | "cmd" | "form" | "subform";
+    open: _UIDataItems["type"] extends "subform" ? UI_Data_Item : string;
 }
 
 /**MOTD数据文件 */

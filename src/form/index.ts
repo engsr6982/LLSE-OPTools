@@ -7,19 +7,23 @@ import { pluginFolderPath } from "../enums/GlobalEnums.js";
 import { parseError } from "../utils/parseError.js";
 import { fileOperation } from "../utils/file.js";
 
-export function indexForm(player: Player, data: UIData = ui) {
+export function indexForm(player: Player, uiData: any = ui) {
     // 初步检查权限
     if (!perm.isOP(player.xuid) && !perm.getUserInGroup(player.xuid)) {
         // 不是OP，不是用户
         return player.tell(gmTell + tr("indexForm.noPermissions"));
     }
-    // 构建主表单
     const fm = mc.newSimpleForm();
     fm.setTitle(tr("indexForm.formTitle", { 0: pluginInformation.name }));
     fm.setContent(tr("indexForm.formContent"));
-    // 遍历添加按钮
+
     const newArray: UI_Data_Item = [];
-    data.data.forEach((i) => {
+    let forArray: any;
+
+    // 根据类型进行构建表单
+    Object.prototype.hasOwnProperty.call(uiData, "data") ? (forArray = uiData.data) : (forArray = uiData);
+    // 构建表单
+    forArray.forEach((i: _UIDataItems) => {
         if (perm.isOP(player.xuid)) {
             // 插件管理员
             fm.addButton(i.name, i.image);
@@ -30,6 +34,7 @@ export function indexForm(player: Player, data: UIData = ui) {
             newArray.push(i);
         }
     });
+
     // 检查是否无任何可用功能
     if (newArray.length === 0) return player.tell(gmTell + tr("indexForm.noFunction"));
     // 发送表单
@@ -54,6 +59,9 @@ export function indexForm(player: Player, data: UIData = ui) {
                 } catch (err) {
                     parseError(err);
                 }
+                break;
+            case "subform": // todo 子表单
+                indexForm(player2, newArray[id].open);
                 break;
             default:
                 player2.tell(gmTell + tr("indexForm.configurationError"));
