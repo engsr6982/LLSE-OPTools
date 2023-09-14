@@ -6,9 +6,9 @@ import PermGroup_Form from "./GUI/Form.js";
 // 权限值定义
 export const _Perm_Object = {
     //! 注意数据结构
-    "test": {// 权限英文key用于访问数据
-        "name": "测试",// 权限名称
-        "value": "ttt"// 权限值
+    "kick": {// 权限英文key用于访问数据
+        "name": "踢出玩家",// 权限名称
+        "value": "0x0"// 权限值
     }
 };
 

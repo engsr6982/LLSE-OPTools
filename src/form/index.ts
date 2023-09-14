@@ -11,30 +11,31 @@ export function indexForm(player: Player, uiData: UIData | UI_Data_Item = ui) {
     // 初步检查权限
     if (!perm.isOP(player.xuid) && !perm.getUserInGroup(player.xuid)) {
         // 不是OP也不是用户
-        return player.tell(gmTell + tr("indexForm.noPermissions"));
+        return player.tell(gmTell + tr("form.indexForm.noPermissions"));
     }
     const fm = mc.newSimpleForm();
-    fm.setTitle(tr("indexForm.formTitle", { 0: pluginInformation.name }));
-    fm.setContent(tr("indexForm.formContent"));
+    fm.setTitle(tr("form.indexForm.formTitle", { 0: pluginInformation.name }));
+    fm.setContent(tr("form.indexForm.formContent"));
 
     const newArray: UI_Data_Item = [];
     const forArray: UI_Data_Item = !Array.isArray(uiData) && Object.prototype.hasOwnProperty.call(uiData, "data") ? <UI_Data_Item>uiData.data : <UI_Data_Item>uiData;
 
     // 构建表单
     forArray.forEach((i: _UIDataItems) => {
+        logger.debug(`indexForm.forArray: ${i.type}`);
         if (perm.isOP(player.xuid)) {
             // 插件管理员
             fm.addButton(i.name, i.image);
             newArray.push(i);
-        } else if (perm.hasUserPerm(player.xuid, <string>i.open /* 注意：此处函数定义需要与权限值相同 */)) {
-            // 子用户
+        } else if (i.type === "subform" || perm.hasUserPerm(player.xuid, <string>i.open /* 注意：此处函数定义需要与权限值相同 */)) {
+            // 子用户 / subform
             fm.addButton(i.name, i.image);
             newArray.push(i);
         }
     });
 
     // 检查是否无任何可用功能
-    if (newArray.length === 0) return player.tell(gmTell + tr("indexForm.noFunction"));
+    if (newArray.length === 0) return player.tell(gmTell + tr("form.indexForm.noFunction"));
     // 发送表单
     player.sendForm(fm, (player2: Player, id: number) => {
         if (id == null) return player2.tell(gmTell + tr("formClose"));
@@ -50,7 +51,7 @@ export function indexForm(player: Player, uiData: UIData | UI_Data_Item = ui) {
                 try {
                     if (!file.exists(pluginFolderPath.data + newArray[id].open)) {
                         // 文件不存在
-                        return player2.tell(gmTell + tr("indexForm.theSubformDoesNotExist", { 0: newArray[id].open }));
+                        return player2.tell(gmTell + tr("form.indexForm.theSubformDoesNotExist", { 0: newArray[id].open }));
                     }
                     // 调用表单
                     indexForm(player2, JSON.parse(fileOperation.getData(<string>newArray[id].open)));
@@ -62,8 +63,8 @@ export function indexForm(player: Player, uiData: UIData | UI_Data_Item = ui) {
                 indexForm(player2, <UI_Data_Item>newArray[id].open);
                 break;
             default:
-                player2.tell(gmTell + tr("indexForm.configurationError"));
-                logger.error(tr("indexForm.configurationError"));
+                player2.tell(gmTell + tr("form.indexForm.configurationError"));
+                logger.error(tr("form.indexForm.configurationError"));
         }
     });
 }

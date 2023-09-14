@@ -10,13 +10,22 @@
         "reload": "操作成功",
         "failedToObtainPlayerObject": "获取玩家对象失败"
     },
-    "indexForm": {
-        "formTitle": "{0} | 主页",
-        "formContent": "· 选择一个操作",
-        "noFunction": "您当前所在权限组无任何可用功能！",
-        "configurationError": "表单type属性配置错误，无法执行任何操作",
-        "theSubformDoesNotExist": "子表单文件{0}不存在!",
-        "noPermissions": "无权限！"
+    "form": {
+        "indexForm": {
+            "formTitle": "{0} | 主页",
+            "formContent": "· 选择一个操作",
+            "noFunction": "您当前所在权限组无任何可用功能！",
+            "configurationError": "表单type属性配置错误，无法执行任何操作",
+            "theSubformDoesNotExist": "子表单文件{0}不存在!",
+            "noPermissions": "无权限！"
+        },
+        "viewSelection": {
+            "formTitle": "{0} | 视图选择",
+            "content": "请选择视图",
+            "button1": "默认视图",
+            "button2": "批量视图",
+            "button3": "放弃操作"
+        }
     },
     "plugins": {
         "kick_UI": {

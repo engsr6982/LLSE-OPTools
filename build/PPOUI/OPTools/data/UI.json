@@ -10,7 +10,7 @@
                     "name": "踢出玩家",
                     "image": "textures/ui/permissions_visitor_hand",
                     "type": "inside",
-                    "open": "kick"
+                    "open": "0x0"
                 },
                 {
                     "name": "杀死玩家",
