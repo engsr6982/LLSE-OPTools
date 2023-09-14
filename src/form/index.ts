@@ -7,10 +7,10 @@ import { pluginFolderPath } from "../enums/GlobalEnums.js";
 import { parseError } from "../utils/parseError.js";
 import { fileOperation } from "../utils/file.js";
 
-export function indexForm(player: Player, uiData: any = ui) {
+export function indexForm(player: Player, uiData: UIData | UI_Data_Item = ui) {
     // 初步检查权限
     if (!perm.isOP(player.xuid) && !perm.getUserInGroup(player.xuid)) {
-        // 不是OP，不是用户
+        // 不是OP也不是用户
         return player.tell(gmTell + tr("indexForm.noPermissions"));
     }
     const fm = mc.newSimpleForm();
@@ -18,17 +18,15 @@ export function indexForm(player: Player, uiData: any = ui) {
     fm.setContent(tr("indexForm.formContent"));
 
     const newArray: UI_Data_Item = [];
-    let forArray: any;
+    const forArray: UI_Data_Item = !Array.isArray(uiData) && Object.prototype.hasOwnProperty.call(uiData, "data") ? <UI_Data_Item>uiData.data : <UI_Data_Item>uiData;
 
-    // 根据类型进行构建表单
-    Object.prototype.hasOwnProperty.call(uiData, "data") ? (forArray = uiData.data) : (forArray = uiData);
     // 构建表单
     forArray.forEach((i: _UIDataItems) => {
         if (perm.isOP(player.xuid)) {
             // 插件管理员
             fm.addButton(i.name, i.image);
             newArray.push(i);
-        } else if (perm.hasUserPerm(player.xuid, i.open /* todo 注意：此处权限值需要映射 */)) {
+        } else if (perm.hasUserPerm(player.xuid, <string>i.open /* 注意：此处函数定义需要与权限值相同 */)) {
             // 子用户
             fm.addButton(i.name, i.image);
             newArray.push(i);
@@ -43,10 +41,10 @@ export function indexForm(player: Player, uiData: any = ui) {
         switch (newArray[id].type) {
             case "inside":
                 // 通过映射调用函数
-                functionMappingTable[newArray[id].open](player2);
+                functionMappingTable[<string>newArray[id].open](player2);
                 break;
             case "cmd":
-                player2.runcmd(newArray[id].open);
+                player2.runcmd(<string>newArray[id].open);
                 break;
             case "form":
                 try {
@@ -55,13 +53,13 @@ export function indexForm(player: Player, uiData: any = ui) {
                         return player2.tell(gmTell + tr("indexForm.theSubformDoesNotExist", { 0: newArray[id].open }));
                     }
                     // 调用表单
-                    indexForm(player2, JSON.parse(fileOperation.getData(newArray[id].open)));
+                    indexForm(player2, JSON.parse(fileOperation.getData(<string>newArray[id].open)));
                 } catch (err) {
                     parseError(err);
                 }
                 break;
-            case "subform": // todo 子表单
-                indexForm(player2, newArray[id].open);
+            case "subform":
+                indexForm(player2, <UI_Data_Item>newArray[id].open);
                 break;
             default:
                 player2.tell(gmTell + tr("indexForm.configurationError"));
