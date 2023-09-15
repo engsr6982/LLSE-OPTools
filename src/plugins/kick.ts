@@ -44,7 +44,7 @@ class viewClass {
             for (let i = 0; i < data.length; i++) {
                 logger.debug(`for: ${i}  input: ${input}  player: ${allPlayers[i]}`);
                 if (data[i]) {
-                    allPlayers[i].kick(input as string) ? player2.tell(gmTell + tr("kick.succes.ok", allPlayers[i].realName)) : player2.tell(gmTell + tr("kick.succes.err", allPlayers[i].realName));
+                    allPlayers[i].kick(input as string) ? player2.tell(gmTell + tr("plugins.kick_UI.succes", allPlayers[i].realName)) : player2.tell(gmTell + tr("plugins.kick_UI.fail", allPlayers[i].realName));
                 }
             }
         });

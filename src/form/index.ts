@@ -1,4 +1,4 @@
-import { perm } from "../Perm/index.js";
+import { perm } from "../Perm/index..js";
 import { functionMappingTable } from "./functionMappingTable.js";
 import { gmTell, pluginInformation } from "../utils/GlobalVars.js";
 import { ui } from "../utils/data.js";

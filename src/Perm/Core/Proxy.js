@@ -1,4 +1,4 @@
-import { _Perm_Object } from "../index.js";
+import { _Perm_Object } from "../index..js";
 
 
 /**

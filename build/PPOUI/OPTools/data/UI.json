@@ -16,7 +16,7 @@
                     "name": "杀死玩家",
                     "image": "textures/ui/icon_recipe_equipment",
                     "type": "inside",
-                    "open": ""
+                    "open": "0x1"
                 },
                 {
                     "name": "以玩家身份说话",
