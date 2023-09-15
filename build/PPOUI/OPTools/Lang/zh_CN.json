@@ -47,6 +47,13 @@
             "dropdownBox": "选择玩家(受害者)",
             "success": "操作成功",
             "fail": "操作失败"
+        },
+        "playerCmd_UI": {
+            "formTitle": "{0} | 以玩家身份执行命令",
+            "inputBox": "输入要执行的命令",
+            "dropdownBox": "选择玩家",
+            "success": "操作成功",
+            "fail": "操作失败"
         }
     }
 }
