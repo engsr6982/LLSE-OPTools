@@ -15,6 +15,10 @@ export const _Perm_Object = {
         name: "杀死玩家",
         value: "0x1",
     },
+    playerTalk: {
+        name: "以玩家身份说话",
+        value: "0x2",
+    },
 };
 
 /** 权限组实例 */

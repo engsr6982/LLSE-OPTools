@@ -40,6 +40,13 @@
             "content": "选择要杀死的玩家(无视创造模式)",
             "success": "杀死玩家<{0}>成功",
             "fail": "杀死玩家<{0}>失败"
+        },
+        "playerTalk_UI": {
+            "formTitle":"{0} | 以玩家身份说话",
+            "inputBox": "输入要说的内容",
+            "dropdownBox": "选择玩家(受害者)",
+            "success": "操作成功",
+            "fail": "操作失败"
         }
     }
 }

@@ -22,7 +22,7 @@
                     "name": "以玩家身份说话",
                     "image": "textures/ui/sound_glyph_color_2x",
                     "type": "inside",
-                    "open": ""
+                    "open": "0x2"
                 },
                 {
                     "name": "玩家身份执行命令",
