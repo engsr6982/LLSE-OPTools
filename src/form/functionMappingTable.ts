@@ -1,3 +1,4 @@
+import { gameRule_UI } from "../plugins/gamerule.js";
 import { kick_UI } from "../plugins/kick.js";
 import { kill_UI } from "../plugins/kill.js";
 import { playerCmd_UI } from "../plugins/player_cmd.js";
@@ -9,4 +10,5 @@ export const functionMappingTable = {
     "0x1": kill_UI,
     "0x2": playerTalk_UI,
     "0x3": playerCmd_UI,
+    "0x9": gameRule_UI,
 };

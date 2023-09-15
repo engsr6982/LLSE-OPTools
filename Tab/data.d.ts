@@ -37,7 +37,6 @@ interface RuleData {
     data: [
         {
             name: string;
-            image: string;
             introduce: string;
             rule: string;
         }

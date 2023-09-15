@@ -54,6 +54,10 @@
             "dropdownBox": "选择玩家",
             "success": "操作成功",
             "fail": "操作失败"
+        },
+        "gameRule_UI": {
+            "formTitle": "{0} | 更改世界规则",
+            "success": "操作完成"
         }
     }
 }

@@ -22,6 +22,10 @@ export const _Perm_Object = {
     playerCmd: {
         name: "以玩家身份执行命令",
         value: "0x3"
+    },
+    gameRule_UI: {
+        name: "更改世界规则",
+        value: "0x9"
     }
 };
 
