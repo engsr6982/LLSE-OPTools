@@ -1,5 +1,5 @@
 import { proxyObject } from "../Core/Proxy.js";
-import { GUI_Title, perm } from "../index..js";
+import { GUI_Title, perm } from "../index.js";
 import { _languages } from "./language.js";
 
 /**

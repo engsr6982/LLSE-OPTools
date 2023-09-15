@@ -1,4 +1,4 @@
-import { perm, perm_Form } from "../Perm/index..js";
+import { perm, perm_Form } from "../Perm/index.js";
 import { indexForm } from "../form/index.js";
 import { color } from "../modules/Color.js";
 import { dataOperation } from "../utils/data.js";

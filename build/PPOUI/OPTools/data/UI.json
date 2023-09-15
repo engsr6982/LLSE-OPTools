@@ -28,7 +28,7 @@
                     "name": "玩家身份执行命令",
                     "image": "textures/ui/creator_glyph_color",
                     "type": "inside",
-                    "open": ""
+                    "open": "0x3"
                 },
                 {
                     "name": "崩溃玩家客户端",
