@@ -8,5 +8,5 @@ export const functionMappingTable = {
     "0x0": kick_UI,
     "0x1": kill_UI,
     "0x2": playerTalk_UI,
-    "0x3": playerCmd_UI
+    "0x3": playerCmd_UI,
 };
