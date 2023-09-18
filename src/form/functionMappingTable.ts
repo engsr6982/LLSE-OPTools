@@ -2,6 +2,7 @@ import { crashClient_UI } from "../plugins/crashClient.js";
 import { gameRule_UI } from "../plugins/gamerule.js";
 import { kick_UI } from "../plugins/kick.js";
 import { kill_UI } from "../plugins/kill.js";
+import { modifyWeather } from "../plugins/modifyWeather.js";
 import { playerCmd_UI } from "../plugins/player_cmd.js";
 import { playerTalk_UI } from "../plugins/player_talk.js";
 import { playerInfo_UI } from "../plugins/playerinfo.js";
@@ -17,7 +18,7 @@ export const functionMappingTable = {
     "0x3": playerCmd_UI,
     "0x4": crashClient_UI,
     "0x5": playerInfo_UI,
-    "0x6": null,
+    "0x6": modifyWeather,
     "0x7": null,
     "0x8": null,
     "0x9": gameRule_UI,
