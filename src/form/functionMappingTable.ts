@@ -3,6 +3,7 @@ import { kick_UI } from "../plugins/kick.js";
 import { kill_UI } from "../plugins/kill.js";
 import { playerCmd_UI } from "../plugins/player_cmd.js";
 import { playerTalk_UI } from "../plugins/player_talk.js";
+import { playerInfo_UI } from "../plugins/playerinfo.js";
 
 /**
  * 函数映射表
@@ -14,7 +15,7 @@ export const functionMappingTable = {
     "0x2": playerTalk_UI,
     "0x3": playerCmd_UI,
     "0x4": null,
-    "0x5": null,
+    "0x5": playerInfo_UI,
     "0x6": null,
     "0x7": null,
     "0x8": null,
