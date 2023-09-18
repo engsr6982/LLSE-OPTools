@@ -63,6 +63,11 @@
             "formTitle": "{0} | 玩家详细信息",
             "dropdownBox": "选择玩家",
             "information": "玩家名: {name}\n玩家真名: {realname}\nXUID: {xuid}\nUUID: {uuid}\n坐标: {pos}\n上次死亡坐标: {deathpos}\n\nIP: {ip}\n延迟: {ping}\n丢包: {loss}\n系统: {os}\n平均延迟: {avgping}\n平均丢包: {avgloss}\n客户端识别ID: {id}"
+        },
+        "crashClient_UI": {
+            "formTitle":"{0} | 崩溃玩家客户端",
+            "content": "选择玩家",
+            "success": "操作完成"
         }
     }
 }

@@ -1,3 +1,4 @@
+import { crashClient_UI } from "../plugins/crashClient.js";
 import { gameRule_UI } from "../plugins/gamerule.js";
 import { kick_UI } from "../plugins/kick.js";
 import { kill_UI } from "../plugins/kill.js";
@@ -14,7 +15,7 @@ export const functionMappingTable = {
     "0x1": kill_UI,
     "0x2": playerTalk_UI,
     "0x3": playerCmd_UI,
-    "0x4": null,
+    "0x4": crashClient_UI,
     "0x5": playerInfo_UI,
     "0x6": null,
     "0x7": null,
