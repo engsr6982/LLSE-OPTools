@@ -4,6 +4,7 @@ export const enum pluginFolderPath {
     "data" = global + "data\\",
     "lang" = global + "lang\\",
     "lib" = global + "lib\\",
+    "lib-plugins" = global + lib + "plugins"
 }
 
 /**插件文件 */
