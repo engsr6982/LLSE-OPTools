@@ -7,7 +7,7 @@ interface _String_String {
 }
 
 export class extendedCache {
-    constructor() {}
+    constructor() { }
 
     /**
      * 名称 => { 扩展 }
@@ -37,5 +37,34 @@ export class extendedCache {
      */
     static permissionValueToName(permissionValue: string): string {
         return this._permValue_Mapping_Name[permissionValue] || null;
+    }
+
+    /**
+     * 名称获取扩展文件名
+     * @param name 名称
+     * @returns 扩展文件名
+     */
+    static nameToFileName(name: string): string {
+        return this._name_Mapping_FileName[name] || null;
+    }
+
+    /**
+     * 获取扩展入口函数
+     * @param name 扩展名称
+     * @returns 入口函数
+     */
+    static getExtendedFunction(name: string): Function {
+        if (!this.hasKeyOnObject(this._allExtensions, name)) return null;
+        return this._allExtensions[name].entryFunction;
+    }
+
+    /**
+     * 获取一个扩展实例
+     * @param name 扩展名称
+     * @returns 扩展实例
+     */
+    static getExtended(name: string): ExtendedInformation {
+        if (!this.hasKeyOnObject(this._allExtensions, name)) return null;
+        return this._allExtensions[name]
     }
 }
