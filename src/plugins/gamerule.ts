@@ -50,7 +50,9 @@ export function gameRule_UI(player: Player) {
             // 遍历原始数据
             if (data[index] !== rawData[key]) {
                 // 检查回调数据是否与原始数据不匹配
-                !mc.runcmd(_spliceCommand(key) + ` ${data[index]}`) ? logger.error(`game rule update fail: ${key}: ${rawData[key]} => ${data[index]}`) : null;
+                !mc.runcmd(_spliceCommand(key) + ` ${data[index]}`)
+                    ? logger.error(`game rule update fail: ${key}: ${rawData[key]} => ${data[index]}`)
+                    : null;
             }
             index++;
         }

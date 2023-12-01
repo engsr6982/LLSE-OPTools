@@ -8,10 +8,12 @@ export function playerCmd_UI(player: Player) {
     fm.addInput(tr("plugins.playerCmd_UI.inputBox"), "String");
     fm.addDropdown(
         tr("plugins.playerCmd_UI.dropdownBox"),
-        allPlayers.map((pl) => pl.realName)
+        allPlayers.map((pl) => pl.realName),
     );
     player.sendForm(fm, (player2, data) => {
         if (data == null) return player2.tell(gmTell + tr("formClose"));
-        allPlayers[data[1]].runcmd(data[0]) ? player2.tell(gmTell + tr("plugins.playerCmd_UI.success")) : player2.tell(gmTell + tr("plugins.playerCmd_UI.fail"));
+        allPlayers[data[1]].runcmd(data[0])
+            ? player2.tell(gmTell + tr("plugins.playerCmd_UI.success"))
+            : player2.tell(gmTell + tr("plugins.playerCmd_UI.fail"));
     });
 }

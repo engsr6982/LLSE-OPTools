@@ -14,7 +14,9 @@ export function kill_UI(player: Player): void {
         data.shift();
         for (let i = 0; i < data.length; i++) {
             if (data[i]) {
-                allPlayers[i].kill() ? player2.tell(gmTell + tr("plugins.kill_UI.success", { 0: allPlayers[i].realName })) : player2.tell(gmTell + tr("plugins.kill_UI.fail", { 0: allPlayers[i].realName }));
+                allPlayers[i].kill()
+                    ? player2.tell(gmTell + tr("plugins.kill_UI.success", { 0: allPlayers[i].realName }))
+                    : player2.tell(gmTell + tr("plugins.kill_UI.fail", { 0: allPlayers[i].realName }));
             }
         }
     });

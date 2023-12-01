@@ -20,12 +20,14 @@ class viewClass {
         fm.setTitle(tr("plugins.kick_UI.formTitle", { 0: pluginInformation.name }));
         fm.addDropdown(
             tr("plugins.kick_UI.dropdownBox"),
-            allPlayers.map((pl) => pl.realName)
+            allPlayers.map((pl) => pl.realName),
         );
         fm.addInput(tr("plugins.kick_UI.inputBox"), "String");
         player.sendForm(fm, (player2: Player, data: Array<number | string>) => {
             if (data == null) return player2.tell(gmTell + tr("formClose"));
-            allPlayers[data[0] as number].kick(data[1] as string) ? player2.tell(gmTell + tr("kick.succes.ok", allPlayers[data[0] as number].realName)) : player2.tell(gmTell + tr("kick.succes.err", allPlayers[data[0] as number].realName));
+            allPlayers[data[0] as number].kick(data[1] as string)
+                ? player2.tell(gmTell + tr("kick.succes.ok", allPlayers[data[0] as number].realName))
+                : player2.tell(gmTell + tr("kick.succes.err", allPlayers[data[0] as number].realName));
         });
     }
     static batchView(player: Player) {
@@ -44,7 +46,9 @@ class viewClass {
             for (let i = 0; i < data.length; i++) {
                 logger.debug(`for: ${i}  input: ${input}  player: ${allPlayers[i]}`);
                 if (data[i]) {
-                    allPlayers[i].kick(input as string) ? player2.tell(gmTell + tr("plugins.kick_UI.succes", allPlayers[i].realName)) : player2.tell(gmTell + tr("plugins.kick_UI.fail", allPlayers[i].realName));
+                    allPlayers[i].kick(input as string)
+                        ? player2.tell(gmTell + tr("plugins.kick_UI.succes", allPlayers[i].realName))
+                        : player2.tell(gmTell + tr("plugins.kick_UI.fail", allPlayers[i].realName));
                 }
             }
         });

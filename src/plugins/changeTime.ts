@@ -2,7 +2,14 @@ import { gmTell, pluginInformation } from "../utils/globalVars.js";
 import { tr } from "../utils/i18n.js";
 
 export function changeTime(player: Player) {
-    const sliderItem = Array.of(tr("plugins.changeTime.sliderItem.0"), tr("plugins.changeTime.sliderItem.1"), tr("plugins.changeTime.sliderItem.2"), tr("plugins.changeTime.sliderItem.3"), tr("plugins.changeTime.sliderItem.4"), tr("plugins.changeTime.sliderItem.5"));
+    const sliderItem = Array.of(
+        tr("plugins.changeTime.sliderItem.0"),
+        tr("plugins.changeTime.sliderItem.1"),
+        tr("plugins.changeTime.sliderItem.2"),
+        tr("plugins.changeTime.sliderItem.3"),
+        tr("plugins.changeTime.sliderItem.4"),
+        tr("plugins.changeTime.sliderItem.5"),
+    );
     const fm = mc.newCustomForm();
     fm.setTitle(tr("plugins.changeTime.formTitle", { 0: pluginInformation.name }));
     fm.addLabel(tr("plugins.changeTime.content"));
@@ -17,6 +24,8 @@ export function changeTime(player: Player) {
             4: "midnight",
             5: "sunrise",
         };
-        mc.runcmd(`time set ${timeMap[data[1]]}`) ? player2.tell(gmTell + tr("plugins.changeTime.success", sliderItem[data[1]])) : player2.tell(gmTell + tr("plugins.changeTime.fail", sliderItem[data[0]]));
+        mc.runcmd(`time set ${timeMap[data[1]]}`)
+            ? player2.tell(gmTell + tr("plugins.changeTime.success", sliderItem[data[1]]))
+            : player2.tell(gmTell + tr("plugins.changeTime.fail", sliderItem[data[0]]));
     });
 }

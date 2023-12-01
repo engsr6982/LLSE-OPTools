@@ -7,7 +7,7 @@ export function playerInfo_UI(player: Player) {
     fm.setTitle(tr("plugins.playerInfo_UI.formTitle", { 0: pluginInformation.name }));
     fm.addDropdown(
         tr("plugins.playerInfo_UI.dropdownBox"),
-        allPlayers.map((pl) => pl.realName)
+        allPlayers.map((pl) => pl.realName),
     );
     player.sendForm(fm, (pl, dt) => {
         if (dt == null) return pl.tell(gmTell + tr("formClose"));
@@ -34,7 +34,7 @@ function level_1(player: Player, targetPlayer: Player) {
             avgping: dv.avgPing,
             avgloss: dv.avgPacketLoss,
             id: dv.clientId,
-        })
+        }),
     );
     player.sendForm(fm, (pl /* dt */) => {
         pl.tell(gmTell + tr("formClose"));

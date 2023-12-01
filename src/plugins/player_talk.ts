@@ -8,10 +8,12 @@ export function playerTalk_UI(player: Player) {
     fm.addInput(tr("plugins.playerTalk_UI.inputBox"), "String");
     fm.addDropdown(
         tr("plugins.playerTalk_UI.dropdownBox"),
-        allPlayers.map((pl) => pl.realName)
+        allPlayers.map((pl) => pl.realName),
     );
     player.sendForm(fm, (pl, data) => {
         if (data == null) return pl.tell(gmTell + tr("formClose"));
-        allPlayers[data[1]].talkAs(data[0]) ? pl.tell(gmTell + tr("plugins.playerTalk_UI.success")) : pl.tell(gmTell + tr("plugins.playerTalk_UI.fail"));
+        allPlayers[data[1]].talkAs(data[0])
+            ? pl.tell(gmTell + tr("plugins.playerTalk_UI.success"))
+            : pl.tell(gmTell + tr("plugins.playerTalk_UI.fail"));
     });
 }
