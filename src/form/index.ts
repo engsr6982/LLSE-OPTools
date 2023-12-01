@@ -1,4 +1,3 @@
-import { perm } from "../../../LLSE-Modules/src/Perm/index.js";
 import { gmTell, pluginInformation } from "../utils/globalVars.js";
 import { ui } from "../utils/data.js";
 import { tr } from "../utils/i18n.js";
@@ -17,7 +16,8 @@ export function indexForm(player: Player, uiData: UIData | UI_Data_Item = ui) {
     fm.setContent(tr("form.indexForm.formContent"));
 
     const newArray: UI_Data_Item = [];
-    const forArray: UI_Data_Item = !Array.isArray(uiData) && Object.prototype.hasOwnProperty.call(uiData, "data") ? <UI_Data_Item>uiData.data : <UI_Data_Item>uiData;
+    const forArray: UI_Data_Item =
+        !Array.isArray(uiData) && Object.prototype.hasOwnProperty.call(uiData, "data") ? <UI_Data_Item>uiData.data : <UI_Data_Item>uiData;
 
     // 构建表单
     forArray.forEach((i: _UIDataItems) => {

@@ -1,4 +1,3 @@
-import { perm, perm_Form } from "../../../LLSE-Modules/src/Perm/index.js";
 import { indexForm } from "../form/index.js";
 import { color } from "../../../LLSE-Modules/src/Color.js";
 import { dataOperation } from "../utils/data.js";

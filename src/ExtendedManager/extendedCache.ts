@@ -1,4 +1,3 @@
-import { initModulePerm } from "../../../LLSE-Modules/src/Perm/index.js";
 import { pluginFolderPath } from "../enums/GlobalEnums.js";
 import { pluginInformation } from "../utils/globalVars.js";
 import { printError } from "../utils/util.js";
