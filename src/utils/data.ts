@@ -1,4 +1,4 @@
-import { pluginFile } from "../enums/GlobalEnums.js";
+import { pluginFile } from "./GlobalEnums.js";
 import { printError } from "./util.js";
 import { fileOperation } from "./file.js";
 

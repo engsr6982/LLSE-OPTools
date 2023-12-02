@@ -1,5 +1,4 @@
-import { pluginFolderPath } from "../enums/GlobalEnums.js";
-import { pluginInformation } from "../utils/globalVars.js";
+import { pluginFolderPath } from "../utils/GlobalEnums.js";
 import { printError } from "../utils/util.js";
 
 interface _AllExtensions {
@@ -9,28 +8,6 @@ interface _AllExtensions {
 interface _String_String {
     [key: string]: string;
 }
-
-const __permissionValueDefinition: object = {};
-/**
- * 访问键 => { 权限值、名称? }
- */
-const permissionValueDefinition = new Proxy(__permissionValueDefinition, {
-    set(target, p, newValue, rec) {
-        const a = Reflect.set(target, p, newValue, rec);
-        initModulePerm(
-            {
-                perm: {
-                    path: pluginFolderPath.data + "Perm.json",
-                    default: false,
-                },
-                permForm: pluginFolderPath.lang + "PermLang",
-                formTitle: pluginInformation.name,
-            },
-            __permissionValueDefinition
-        );
-        return a;
-    },
-});
 
 export class extendedCache {
     constructor() {}
@@ -99,7 +76,6 @@ export class extendedCache {
         // 检查是否重复load
         if (this.hasKeyOnObject(this._allExtensions, register.name)) return false; // 扩展名已占用（已加载）
         if (this.permissionValueToName(authority.permissionValue)) return false; // 权限值已占用（已注册）
-        if (permissionValueDefinition[authority.accessKey]) return false; // 访问键已占用（已注册）
         logger.debug(`Repeat loading check is passed`);
         return true;
     }
@@ -145,8 +121,6 @@ export class extendedCache {
             // 删除映射
             delete this._permissionValue_Mapping_Name[authority.permissionValue];
             delete this._name_Mapping_FileName[register.name];
-            // 删除权限组注册
-            delete permissionValueDefinition[authority.accessKey];
             // 删除require缓存
             // @ts-ignore
             delete require.cache[pluginFolderPath["lib-plugins"] + fileName];

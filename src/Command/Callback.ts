@@ -2,6 +2,7 @@ import { indexForm } from "../form/index.js";
 import { color } from "../../../LLSE-Modules/src/Color.js";
 import { dataOperation } from "../utils/data.js";
 import { tr } from "../utils/i18n.js";
+import { pcore, pform } from "../utils/util.js";
 
 interface resItem {
     ac: "add" | "remove" | "reload" | "mgr" | "gui";
@@ -21,7 +22,9 @@ const call = {
         if (!xuid) return out.error(tr("command.failedToObtainXuid", { 0: name }));
 
         // 进行增加管理员
-        perm.addOP(xuid) ? out.success(tr("command.addAdministrator", { 0: name })) : out.error(tr("command.addingAdministratorFailed", { 0: res.name }));
+        pcore.addAdmin(xuid)
+            ? out.success(tr("command.addAdministrator", { 0: name }))
+            : out.error(tr("command.addingAdministratorFailed", { 0: res.name }));
     },
     remove: (_: Command, ori: CommandOrigin, out: CommandOutput, res: resItem): boolean => {
         const { type } = ori;
@@ -34,7 +37,9 @@ const call = {
         if (!xuid) return out.error(tr("command.failedToObtainXuid", { 0: name }));
 
         // 进行移除管理员
-        perm.deOP(xuid) ? out.success(tr("command.removeAdministrator", { 0: name })) : out.error(tr("command.removingAdministratorFailed", { 0: res.name }));
+        pcore.removeAdmin(xuid)
+            ? out.success(tr("command.removeAdministrator", { 0: name }))
+            : out.error(tr("command.removingAdministratorFailed", { 0: res.name }));
     },
     reload: (_: Command, ori: CommandOrigin, out: CommandOutput /* , res: resItem */): boolean => {
         const { type } = ori;
@@ -48,7 +53,7 @@ const call = {
         const { player } = ori;
         if (!player) return out.error(tr("command.failedToObtainPlayerObject"));
         // 打开表单
-        perm_Form.index(player);
+        pform.index(player);
     },
 };
 

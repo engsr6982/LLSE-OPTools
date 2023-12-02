@@ -1,4 +1,4 @@
-import { pluginFile, pluginFolderPath } from "../enums/GlobalEnums.js";
+import { pluginFile, pluginFolderPath } from "./GlobalEnums.js";
 
 /**文件操作 */
 export class fileOperation {

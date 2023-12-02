@@ -1,4 +1,4 @@
-import { pluginFolderPath } from "../enums/GlobalEnums.js";
+import { pluginFolderPath } from "../utils/GlobalEnums.js";
 import { extendedCache } from "./extendedCache.js";
 
 export class pluginExtension extends extendedCache {
@@ -14,7 +14,7 @@ export class pluginExtension extends extendedCache {
     static load(fileName: string) {
         if (file.exists(pluginFolderPath["lib-plugins"] + fileName)) return false;
 
-        return super.install();
+        // return super.install();
     }
 
     static unload() {}

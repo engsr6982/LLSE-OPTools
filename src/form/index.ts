@@ -1,13 +1,13 @@
 import { gmTell, pluginInformation } from "../utils/globalVars.js";
 import { ui } from "../utils/data.js";
 import { tr } from "../utils/i18n.js";
-import { pluginFolderPath } from "../enums/GlobalEnums.js";
-import { printError } from "../utils/util.js";
+import { pluginFolderPath } from "../utils/GlobalEnums.js";
+import { pcore, printError } from "../utils/util.js";
 import { fileOperation } from "../utils/file.js";
 
 export function indexForm(player: Player, uiData: UIData | UI_Data_Item = ui) {
     // 初步检查权限
-    if (!perm.isOP(player.xuid) && !perm.getUserInGroup(player.xuid)) {
+    if (!pcore.addAdmin(player.xuid) && !pcore.getUserGroups(player.xuid)) {
         // 不是OP也不是用户
         return player.tell(gmTell + tr("form.indexForm.noPermissions"));
     }
@@ -22,11 +22,14 @@ export function indexForm(player: Player, uiData: UIData | UI_Data_Item = ui) {
     // 构建表单
     forArray.forEach((i: _UIDataItems) => {
         logger.debug(`indexForm.forArray: ${i.type}`);
-        if (perm.isOP(player.xuid)) {
+        if (pcore.isAdmin(player.xuid)) {
             // 插件管理员
             fm.addButton(i.name, i.image);
             newArray.push(i);
-        } else if (i.type === "subform" || perm.hasUserPerm(player.xuid, <string>i.open /* 注意：此处函数定义需要与权限值相同 */)) {
+        } else if (
+            i.type === "subform" ||
+            pcore.checkUserPermission(player.xuid, <string>i.open /* 注意：此处函数定义需要与权限值相同 */)
+        ) {
             // 子用户 / subform
             fm.addButton(i.name, i.image);
             newArray.push(i);

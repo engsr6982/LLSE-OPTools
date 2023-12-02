@@ -2,7 +2,8 @@
   "extends": "../../tsconfig.json",
   "include": [
     "./src",
-    "../../HelperLib/src"
+    "../../HelperLib/src",
+    "../LLSE-Modules/src/Permission/tab.d.ts"
   ],
   "compilerOptions": {
     "outDir": "./build",

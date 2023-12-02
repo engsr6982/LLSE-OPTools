@@ -2,19 +2,22 @@ import { gmTell, pluginInformation } from "../utils/globalVars.js";
 import { rule } from "../utils/data.js";
 import { tr } from "../utils/i18n.js";
 
+// 拼接命令
 function _spliceCommand(rule: string): string {
     return `gamerule ${rule}`;
 }
 
-function _extractCommandResultValue(rule: string, value: string): string {
+// 解析规则值
+function _extractCommandResultValue(value: string): string {
     return value.replace(RegExp(/.+=./g), "");
 }
 
-function getRule_Value(rule: string): string {
-    const command = _spliceCommand(rule);
-    const { output, success } = mc.runcmdEx(command);
-    logger.debug(`command: ${command} => success: ${success} | output: ${output}`);
-    return _extractCommandResultValue(rule, output);
+// 获取规则值
+function getRuleValue(rule: string): string {
+    const command = _spliceCommand(rule); // 拼接命令
+    const { output, success } = mc.runcmdEx(command); // 执行命令
+    logger.debug(`command: ${command} => status: ${success} | output: ${output}`);
+    return _extractCommandResultValue(output); // 解析并返回
 }
 
 // function obtainDataType(data: any): string {
@@ -28,17 +31,17 @@ export function gameRule_UI(player: Player) {
     const rawData = {}; // 原始数据，用于记录数据是否变动
 
     rule.data.forEach((i) => {
-        const value = getRule_Value(i.rule); // 获取数据值
+        const value = getRuleValue(i.rule); // 获取数据值
 
         const stringBoolToBool = (stringBool: string) => {
             return /true/.test(stringBool); // 使用正则辅助转换string => bool
         };
 
         if (value === "true" || value === "false") {
-            fm.addSwitch(`${i.name}\n${i.introduce}`, stringBoolToBool(value)); // 类型bool
+            fm.addSwitch(`${i.name}\n${i.describe}`, stringBoolToBool(value)); // 类型bool
             rawData[i.rule] = stringBoolToBool(value);
         } else {
-            fm.addInput(`${i.name}\n${i.introduce}`, "string number", value); // 类型string
+            fm.addInput(`${i.name}\n${i.describe}`, "string number", value); // 类型string
             rawData[i.rule] = value;
         }
     });

@@ -1,4 +1,4 @@
-import { pluginFolderPath } from "../enums/GlobalEnums.js";
+import { pluginFolderPath } from "./GlobalEnums.js";
 import { config } from "./data.js";
 import { fileOperation } from "./file.js";
 import { printError } from "./util.js";
