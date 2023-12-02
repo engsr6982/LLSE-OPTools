@@ -6,7 +6,7 @@ interface BlockData {
             name: string;
             image: string;
             type: string;
-        }
+        },
     ];
 }
 
@@ -36,10 +36,11 @@ interface RuleData {
     version: string;
     data: [
         {
-            name: string;
-            introduce: string;
-            rule: string;
-        }
+            rule: string; // 规则
+            name: string; // 名称
+            describe: string; // 描述
+            effect: string; // 效果
+        },
     ];
 }
 
