@@ -2,7 +2,7 @@ import PermissionCore from "../../../LLSE-Modules/src/Permission/PermissionCore.
 import { pluginFolderPath } from "./GlobalEnums.js";
 import PermissionForm from "../../../LLSE-Modules/src/Permission/PermissionForm.js";
 
-export function printError(err: Error) {
+export function formatPrintError(err: Error) {
     logger.error(`捕获错误: ${err}\n${err.stack}`);
 }
 

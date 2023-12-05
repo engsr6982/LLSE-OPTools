@@ -1,5 +1,5 @@
 import { pluginFile } from "./GlobalEnums.js";
-import { printError } from "./util.js";
+import { formatPrintError } from "./util.js";
 import { fileOperation } from "./file.js";
 
 const __inits = {
@@ -468,7 +468,7 @@ export class dataOperation extends fileOperation {
             if (!super.hasData(pluginFile.motd)) super.setData(pluginFile.motd, JSON.stringify([]));
             return true;
         } catch (err) {
-            printError(err);
+            formatPrintError(err);
             return false;
         }
     }
@@ -486,7 +486,7 @@ export class dataOperation extends fileOperation {
             motd = JSON.parse(super.getData(pluginFile.motd));
             return true;
         } catch (err) {
-            printError(err);
+            formatPrintError(err);
             return false;
         }
     }

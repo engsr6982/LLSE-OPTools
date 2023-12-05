@@ -1,7 +1,7 @@
 import { pluginFolderPath } from "./GlobalEnums.js";
 import { config } from "./data.js";
 import { fileOperation } from "./file.js";
-import { printError } from "./util.js";
+import { formatPrintError } from "./util.js";
 
 const _language = {
     zh_CN: {
@@ -57,7 +57,7 @@ export function load_i18n() {
         i18n.load(pluginFolderPath.lang, loadLanguage);
         logger.info(`Successfully loaded the language pack ${loadLanguage}`);
     } catch (error) {
-        printError(error);
+        formatPrintError(error);
         return false;
     }
 }
