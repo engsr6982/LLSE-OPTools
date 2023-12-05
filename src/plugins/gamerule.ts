@@ -37,11 +37,12 @@ export function gameRule_UI(player: Player) {
             return /true/.test(stringBool); // 使用正则辅助转换string => bool
         };
 
+        const title = `${i.name}\n${i.describe}\n${i.effect}\n----------------`;
         if (value === "true" || value === "false") {
-            fm.addSwitch(`${i.name}\n${i.describe}`, stringBoolToBool(value)); // 类型bool
+            fm.addSwitch(title, stringBoolToBool(value)); // 类型bool
             rawData[i.rule] = stringBoolToBool(value);
         } else {
-            fm.addInput(`${i.name}\n${i.describe}`, "string number", value); // 类型string
+            fm.addInput(title, "string number", value); // 类型string
             rawData[i.rule] = value;
         }
     });
