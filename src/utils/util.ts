@@ -8,6 +8,6 @@ export function formatPrintError(err: Error) {
 
 export const pcore = new PermissionCore(pluginFolderPath.data + "perm.json", false);
 
-export const pform = new PermissionForm(pluginFolderPath.lang + "perm", () => {
+export const pform = new PermissionForm(pluginFolderPath.lang + "perm\\", () => {
     return pcore;
 });

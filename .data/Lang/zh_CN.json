@@ -57,6 +57,7 @@
         },
         "gameRule_UI": {
             "formTitle": "{0} | 更改世界规则",
+            "itemTitle": "名称: {0}\n描述: {1}\n效果: {2}\n解析状态: {3}",
             "success": "操作完成"
         },
         "playerInfo_UI": {
@@ -82,7 +83,7 @@
             "fail": "更改天气为<{}>失败！"
         },
         "changeTime": {
-            "formTitle":"{0} | 更改世界时间",
+            "formTitle": "{0} | 更改世界时间",
             "content": "滑动选择需要更改的时间",
             "sliderText": "<上午>---<中午>--<傍晚>--<晚上>--<深夜>---<凌晨>\n\n已选择",
             "sliderItem": {

@@ -3,60 +3,70 @@ import { rule } from "../utils/data.js";
 import { tr } from "../utils/i18n.js";
 
 // 拼接命令
-function _spliceCommand(rule: string): string {
+function spliceCommand(rule: string): string {
     return `gamerule ${rule}`;
 }
 
 // 解析规则值
-function _extractCommandResultValue(value: string): string {
-    return value.replace(RegExp(/.+=./g), "");
+function extractCommandResultValue(output: string): string {
+    return output.replace(RegExp(/.+=./g), ""); // 解析命令返回值
 }
 
 // 获取规则值
-function getRuleValue(rule: string): string {
-    const command = _spliceCommand(rule); // 拼接命令
+function getRuleValue(rule: string) {
+    const command = spliceCommand(rule); // 拼接命令
     const { output, success } = mc.runcmdEx(command); // 执行命令
     logger.debug(`command: ${command} => status: ${success} | output: ${output}`);
-    return _extractCommandResultValue(output); // 解析并返回
+    return {
+        output: extractCommandResultValue(output),
+        success: success,
+    };
 }
 
-// function obtainDataType(data: any): string {
-//     return Object.prototype.toString.call(data);
-// }
-
+// GUI
 export function gameRule_UI(player: Player) {
-    const fm = mc.newCustomForm();
-    fm.setTitle(tr("plugins.gameRule_UI.formTitle", { 0: pluginInformation.name }));
+    const fm = mc.newCustomForm(); // 构建表单
+    fm.setTitle(tr("plugins.gameRule_UI.formTitle", { 0: pluginInformation.name })); // 设置标题
 
     const rawData = {}; // 原始数据，用于记录数据是否变动
 
     rule.data.forEach((i) => {
-        const value = getRuleValue(i.rule); // 获取数据值
+        const { success, output } = getRuleValue(i.rule); // 获取数据值
 
+        // Bool转换
         const stringBoolToBool = (stringBool: string) => {
-            return /true/.test(stringBool); // 使用正则辅助转换string => bool
+            return /true/.test(stringBool); // 正则转换 string => bool
         };
 
-        const title = `${i.name}\n${i.describe}\n${i.effect}\n----------------`;
-        if (value === "true" || value === "false") {
-            fm.addSwitch(title, stringBoolToBool(value)); // 类型bool
-            rawData[i.rule] = stringBoolToBool(value);
+        // 拼接标题
+        const title = tr("plugins.gameRule_UI.itemTitle", {
+            0: i.name,
+            1: i.describe,
+            2: i.effect,
+            3: success,
+        });
+
+        // 根据数据类型进行构建表单
+        if (output === "true" || output === "false") {
+            // Bool 类型，使用Switch
+            const bool = stringBoolToBool(output); // 调用转换
+            fm.addSwitch(title + "\n ", bool);
+            rawData[i.rule] = bool; // 记录当前数据
         } else {
-            fm.addInput(title, "string number", value); // 类型string
-            rawData[i.rule] = value;
+            // 其他类型，使用Input
+            fm.addInput(title, "string any", output);
+            rawData[i.rule] = output;
         }
     });
     player.sendForm(fm, (player2, data) => {
         if (data == null) return player2.tell(gmTell + tr("formClose"));
         // logger.debug(JSON.stringify(data));
         let index = 0;
+        // 遍历原始数据
         for (const key in rawData) {
-            // 遍历原始数据
+            // 检查回调数据是否与原始数据不匹配
             if (data[index] !== rawData[key]) {
-                // 检查回调数据是否与原始数据不匹配
-                !mc.runcmd(_spliceCommand(key) + ` ${data[index]}`)
-                    ? logger.error(`game rule update fail: ${key}: ${rawData[key]} => ${data[index]}`)
-                    : null;
+                mc.runcmd(spliceCommand(key) + ` ${data[index]}`);
             }
             index++;
         }
