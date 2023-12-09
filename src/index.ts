@@ -1,6 +1,6 @@
 import { regCommand } from "./Command/RegCommand.js";
 import { dataOperation } from "./utils/data.js";
-import { pluginInformation } from "./utils/globalVars.js";
+import { pluginInformation } from "./utils/GlobalVars.js";
 import { load_i18n } from "./utils/i18n.js";
 
 logger.info(`Loading...\n
@@ -11,7 +11,10 @@ logger.info(`Loading...\n
                 | |__| | |         | | (_) | (_) | \\__ \\
                  \\____/|_|         |_|\\___/ \\___/|_|___/\n
     ---- ${pluginInformation.minebbs} ----
-                    Author: ${pluginInformation.author}   Version: ${pluginInformation.version.join(".").replace(/,/g, ".").replace(/\.0$/gm, "")}
+                    Author: ${pluginInformation.author}   Version: ${pluginInformation.version
+                        .join(".")
+                        .replace(/,/g, ".")
+                        .replace(/\.0$/gm, "")}
 `);
 
 // 注册插件

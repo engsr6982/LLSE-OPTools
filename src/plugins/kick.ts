@@ -1,5 +1,5 @@
 import { viewSelection } from "../form/viewSelection.js";
-import { gmTell, pluginInformation } from "../utils/globalVars.js";
+import { gmTell, pluginInformation } from "../utils/GlobalVars.js";
 import { tr } from "../utils/i18n.js";
 
 export function kick_UI(player: Player): void {

@@ -1,4 +1,4 @@
-import { pluginInformation } from "../utils/globalVars.js";
+import { pluginInformation } from "../utils/GlobalVars.js";
 import { tr } from "../utils/i18n.js";
 import { formatPrintError } from "../utils/util.js";
 import { command_callback } from "./Callback.js";

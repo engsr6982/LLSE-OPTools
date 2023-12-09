@@ -1,4 +1,4 @@
-import { gmTell, pluginInformation } from "../utils/globalVars.js";
+import { gmTell, pluginInformation } from "../utils/GlobalVars.js";
 import { ui } from "../utils/data.js";
 import { tr } from "../utils/i18n.js";
 import { pluginFolderPath } from "../utils/GlobalEnums.js";
